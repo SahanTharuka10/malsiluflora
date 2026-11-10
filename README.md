@@ -4,6 +4,6 @@ Website for Malsilu Flora, Kiribathgoda, Sri Lanka: cascade bridal bouquets, rou
 
 - Browse all 110 bouquets by category, or search them
 - Price list in LKR
-- Order straight from a bouquet on WhatsApp: 075 859 9506
+- Order straight from a bouquet on WhatsApp: 075 859 6506
 
 To change bouquets or prices, edit `data.js`.
