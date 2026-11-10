@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malsilu Flora · Wedding Bouquets, Kiribathgoda</title>
+<meta name="description" content="Malsilu Flora – The Wedding Bouquet Collection. Cascade bridal bouquets, hand-tied bouquets, bridal party sets and wedding car flowers in Kiribathgoda, Sri Lanka.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top"><img src="images/logo.png" alt="" width="40" height="38"><span>Malsilu Flora</span></a>
+  <nav class="links">
+    <a href="#collection">Collection</a>
+    <a href="#prices">Price list</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn-sm" href="https://wa.me/94758599506" target="_blank" rel="noopener">WhatsApp</a>
+</header>
+
+<section class="hero">
+  <div class="hero-img" style="background-image:url(images/hero.jpg)"></div>
+  <div class="hero-text">
+    <p class="eyebrow">Kiribathgoda · Sri Lanka</p>
+    <h1>The Wedding Bouquet Collection</h1>
+    <p class="lead">Flowers for your most beautiful day.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#collection">Browse bouquets</a>
+      <a class="btn btn-ghost" href="tel:+94758599506">Call 075 859 9506</a>
+    </div>
+  </div>
+</section>
+
+<section class="cats" aria-label="Categories">
+  <div class="wrap cat-grid" id="catCards"></div>
+</section>
+
+<section class="collection wrap" id="collection">
+  <div class="sec-head">
+    <h2>Our Collection</h2>
+    <p id="catBlurb">Every bouquet at a glance.</p>
+  </div>
+  <div class="toolbar">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <input type="search" id="search" placeholder="Search by name, flower or code…" aria-label="Search bouquets">
+  </div>
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="prices" id="prices">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Price List</h2>
+      <p>Every bouquet at a glance. All prices are in Sri Lankan Rupees (LKR).</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Code</th><th>Bouquet</th><th>Style</th><th class="r">LKR</th></tr></thead>
+        <tbody id="priceRows"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="notes wrap" id="contact">
+  <div class="note-card">
+    <h3>Ordering notes</h3>
+    <ul>
+      <li>Please place wedding orders well in advance to secure your date.</li>
+      <li>Flowers and colours may vary slightly with seasonal availability.</li>
+      <li>Party sets are priced per complete set of bouquets, as shown on each item.</li>
+      <li>All prices are in Sri Lankan Rupees (LKR).</li>
+    </ul>
+  </div>
+  <div class="note-card contact">
+    <img src="images/logo.png" alt="Malsilu Flora logo" width="90" height="86">
+    <h3>Orders &amp; enquiries</h3>
+    <a class="phone" href="tel:+94758599506">075 859 9506</a>
+    <p>Kiribathgoda, Sri Lanka</p>
+    <div class="hero-cta center">
+      <a class="btn" href="https://wa.me/94758599506" target="_blank" rel="noopener">Message on WhatsApp</a>
+      <a class="btn btn-ghost dark" href="tel:+94758599506">Call now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Thank you for choosing Malsilu Flora.</p>
+  <p class="small">© <span id="yr"></span> Malsilu Flora · Kiribathgoda</p>
+</footer>
+
+<dialog id="modal">
+  <button class="close" aria-label="Close" data-close>&times;</button>
+  <div class="m-body">
+    <img id="mImg" alt="">
+    <div class="m-info">
+      <span class="code" id="mCode"></span>
+      <h3 id="mName"></h3>
+      <p id="mDesc"></p>
+      <p class="pf"><span>Perfect for</span><b id="mTags"></b></p>
+      <p class="m-price" id="mPrice"></p>
+      <a class="btn" id="mOrder" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <div class="m-nav"><button id="mPrev">‹ Previous</button><button id="mNext">Next ›</button></div>
+    </div>
+  </div>
+</dialog>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
