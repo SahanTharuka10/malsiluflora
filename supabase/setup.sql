@@ -12,12 +12,15 @@ create table if not exists public.bouquets (
   description text not null default '',
   tags        text not null default '',                -- "Bridal bouquets / Wedding day"
   price       text not null default 'On request',      -- "25,000", "40,000 per set of 4" or "On request"
-  category    text not null check (category in ('cascade','round','colour','party','car')),
+  category    text not null,                           -- an id from categories.js, e.g. cascade, car, stage
   image_path  text,                                    -- file name in the "bouquets" storage bucket
   sort_order  integer not null default 0,
   active      boolean not null default true,           -- false = hidden from the website
   updated_at  timestamptz not null default now()
 );
+
+-- categories are listed in categories.js; remove the old fixed list if an earlier setup added it
+alter table public.bouquets drop constraint if exists bouquets_category_check;
 
 create index if not exists bouquets_order_idx on public.bouquets (sort_order, code);
 

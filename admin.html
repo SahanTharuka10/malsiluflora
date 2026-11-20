@@ -96,8 +96,8 @@
 
     <section class="import" id="importBox" hidden>
       <div>
-        <h2>Bring in your current bouquets</h2>
-        <p>Your database is empty. Import the <b id="importCount">100</b> bouquets and photos that are on the website now. This takes a minute or two.</p>
+        <h2 id="importTitle">Bring in your current bouquets</h2>
+        <p id="importText"></p>
         <div class="progress" id="importProgress" hidden><span id="importBar"></span></div>
         <p class="fine" id="importStatus" aria-live="polite"></p>
       </div>
@@ -175,6 +175,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script src="config.js"></script>
+<script src="categories.js"></script>
 <script src="data.js"></script>
 <script src="admin.js"></script>
 </body>

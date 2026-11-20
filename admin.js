@@ -1,13 +1,7 @@
 /* Malsilu Flora · Bouquet Manager (Supabase) */
 const CFG = window.MALSILU_CONFIG || {};
 const BUCKET = CFG.bucket || "bouquets";
-const CATS = [
-  { id: "cascade", name: "Cascade Bridal Bouquets" },
-  { id: "round", name: "Round Hand-Tied Bouquets" },
-  { id: "colour", name: "Colour Bouquets" },
-  { id: "party", name: "Bridal Party Sets" },
-  { id: "car", name: "Wedding Car & Table Flowers" },
-];
+const CATS = window.MALSILU_CATS || [];
 const SOURCE = typeof BOUQUETS !== "undefined" ? BOUQUETS : []; // data.js, used for the one-time import
 const MAX_PX = 1400;      // photos are resized to fit within this before upload
 const $ = (s, r = document) => r.querySelector(s);
@@ -93,9 +87,12 @@ function renderAll() {
     [rows.filter((r) => !r.image_path).length, "Missing photo"],
   ].map(([n, l]) => `<li><b>${n}</b><span>${l}</span></li>`).join("");
 
-  const empty = !rows.length;
-  $("#importBox").hidden = !empty || !SOURCE.length;
-  $("#importCount").textContent = SOURCE.length;
+  const empty = !rows.length, missing = missingFromDb();
+  $("#importBox").hidden = !missing.length;
+  $("#importTitle").textContent = empty ? "Bring in your current bouquets" : "New bouquets on the website";
+  $("#importText").innerHTML = empty
+    ? `Your database is empty. Import the <b>${missing.length}</b> bouquets and photos that are on the website now. This takes a few minutes.`
+    : `<b>${missing.length}</b> bouquet${missing.length === 1 ? " is" : "s are"} in the website's built-in list but not in your database yet. Import adds only these; your edits stay as they are.`;
   $("#tools").hidden = empty;
   renderRows();
 }
@@ -304,9 +301,13 @@ $("#edDelete").addEventListener("click", async () => {
   toast(`${r.code} deleted`);
 });
 
-/* ---------- one-time import from data.js + images/ ---------- */
+/* ---------- import bouquets from data.js + images/ that aren't in the database ---------- */
+function missingFromDb() {
+  const have = new Set(rows.map((r) => r.code));
+  return SOURCE.map((b, i) => ({ ...b, order: (i + 1) * 10 })).filter((b) => !have.has(b.code));
+}
 $("#importBtn").addEventListener("click", async () => {
-  const src = SOURCE;
+  const src = missingFromDb();
   if (!src.length) return;
   const btn = $("#importBtn"); btn.disabled = true; btn.textContent = "Importing…";
   $("#importProgress").hidden = false;
@@ -325,10 +326,10 @@ $("#importBtn").addEventListener("click", async () => {
         const blob = await res.blob();
         const up = await sb.storage.from(BUCKET).upload(path, blob, { contentType: "image/jpeg", upsert: true, cacheControl: "31536000" });
         if (up.error) throw up.error;
-        out[i] = { code: b.code, name: b.name, description: b.desc, tags: b.tags, price: b.price, category: b.cat, image_path: path, sort_order: (i + 1) * 10, active: true };
+        out[i] = { code: b.code, name: b.name, description: b.desc, tags: b.tags, price: b.price, category: b.cat, image_path: path, sort_order: b.order, active: true };
       } catch (e) {
         failed.push(b.code);
-        out[i] = { code: b.code, name: b.name, description: b.desc, tags: b.tags, price: b.price, category: b.cat, image_path: null, sort_order: (i + 1) * 10, active: true };
+        out[i] = { code: b.code, name: b.name, description: b.desc, tags: b.tags, price: b.price, category: b.cat, image_path: null, sort_order: b.order, active: true };
         if (/row-level|Unauthorized|403/i.test(e?.message || "")) { next = src.length; status(niceError(e)); }
       }
       bar(++done); status(`Uploading photos… ${done} of ${src.length}`);

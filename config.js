@@ -5,6 +5,8 @@
 // service_role key into this file.
 // Leave them empty and the site simply uses data.js and the images folder.
 window.MALSILU_CONFIG = {
+  // the live website address, used for bouquet links in WhatsApp orders
+  siteUrl: "https://malsiluflora.vercel.app",
   supabaseUrl: "",
   supabaseKey: "",
   bucket: "bouquets",

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Malsilu Flora · Wedding Bouquets, Kiribathgoda</title>
-<meta name="description" content="Malsilu Flora – The Wedding Bouquet Collection. Cascade bridal bouquets, hand-tied bouquets, bridal party sets and wedding car flowers, handcrafted in Kiribathgoda, Sri Lanka since 2007.">
+<meta name="description" content="Malsilu Flora – bridal bouquets, rose and mixed-flower bouquets, wedding car decorations, table flowers, stage décor and floral arches, handcrafted in Kiribathgoda, Sri Lanka since 2007.">
 <meta name="theme-color" content="#6e2a4f">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Malsilu Flora · The Wedding Bouquet Collection">
-<meta property="og:description" content="Bridal bouquets, party sets and wedding car flowers, handcrafted in Kiribathgoda since 2007.">
+<meta property="og:description" content="Bridal bouquets, car decorations, stage décor and wedding flowers, handcrafted in Kiribathgoda since 2007.">
 <meta property="og:image" content="images/hero.jpg">
 <link rel="icon" href="images/logo.png">
 <link rel="apple-touch-icon" href="images/logo.png">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Florist","name":"Malsilu Flora","description":"Wedding bouquets, bridal party sets and wedding car flowers.","telephone":"+94758596506","foundingDate":"2007","image":"images/hero.jpg","logo":"images/logo.png","address":{"@type":"PostalAddress","addressLocality":"Kiribathgoda","addressCountry":"LK"},"priceRange":"LKR"}
+{"@context":"https://schema.org","@type":"Florist","name":"Malsilu Flora","description":"Wedding bouquets, car decorations, table and stage flowers, and floral arches.","telephone":"+94758596506","foundingDate":"2007","image":"images/hero.jpg","logo":"images/logo.png","address":{"@type":"PostalAddress","addressLocality":"Kiribathgoda","addressCountry":"LK"},"priceRange":"LKR"}
 </script>
 </head>
 <body>
@@ -96,9 +96,13 @@
   <div class="sec-head" data-reveal>
     <p class="kicker">Shop by style</p>
     <h2 id="collTitle">Our <em>Collections</em></h2>
-    <p>Five signature collections, each designed to complete a different moment of your wedding day.</p>
+    <p>From the bridal bouquet to the car, the tables and the stage — every flower for your wedding day, in one place.</p>
   </div>
-  <div class="coll-grid" id="catCards"></div>
+  <div class="coll-wrap">
+    <button class="coll-nav prev" type="button" data-scroll="-1" aria-label="Previous collections"><svg class="ico flip"><use href="#i-arrow"/></svg></button>
+    <div class="coll-grid" id="catCards"></div>
+    <button class="coll-nav next" type="button" data-scroll="1" aria-label="More collections"><svg class="ico"><use href="#i-arrow"/></svg></button>
+  </div>
 </section>
 
 <section class="gallery" id="collection" aria-labelledby="galTitle">
@@ -180,7 +184,7 @@
         <ul>
           <li><svg class="ico"><use href="#i-check"/></svg>Please place wedding orders well in advance to secure your date.</li>
           <li><svg class="ico"><use href="#i-check"/></svg>Flowers and colours may vary slightly with seasonal availability.</li>
-          <li><svg class="ico"><use href="#i-check"/></svg>Party set prices are per set or per bouquet, as shown on each item.</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Some prices are per set, pair, table or metre, as shown on each item. Stage, arch and table décor is priced to your design.</li>
           <li><svg class="ico"><use href="#i-check"/></svg>All prices are in Sri Lankan Rupees (LKR).</li>
         </ul>
       </div>
@@ -247,6 +251,7 @@
 </dialog>
 
 <script src="config.js"></script>
+<script src="categories.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>

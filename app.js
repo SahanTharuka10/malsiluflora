@@ -1,13 +1,11 @@
 const PHONE = "94758596506";
-const CATS = [
-  { id: "cascade", name: "Cascade Bridal Bouquets", short: "Cascade", blurb: "Graceful trailing blooms for your walk down the aisle." },
-  { id: "round", name: "Round Hand-Tied Bouquets", short: "Round Hand-Tied", blurb: "Classic hand-tied bouquets in ivory, white and soft green." },
-  { id: "colour", name: "Colour Bouquets", short: "Colour", blurb: "Rich reds, deep burgundy and warm peach tones to match your theme." },
-  { id: "party", name: "Bridal Party Sets", short: "Party Sets", blurb: "Matching bouquets for the bride, bridesmaids and flower girls." },
-  { id: "car", name: "Wedding Car & Table Flowers", short: "Car & Table", blurb: "Fresh flower arrangements for wedding cars and reception tables." },
-];
-const COVER = { cascade: "ML-01", round: "ML-43", colour: "ML-73", party: "ML-93", car: "ML-101" };
+const CATS = window.MALSILU_CATS || [];
 const PAGE = 12;
+const CFG = window.MALSILU_CONFIG || {};
+const BACKUP = typeof BOUQUETS !== "undefined" ? BOUQUETS : [];
+// the live site address, used for the bouquet link in WhatsApp orders
+const SITE = (CFG.siteUrl || location.origin + location.pathname.replace(/[^/]*$/, "")).replace(/\/+$/, "");
+const HAS_PAGE = new Set(BACKUP.map((b) => b.code)); // these have a share page in b/ with a photo preview
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -24,12 +22,20 @@ function priceParts(p) {
   return { main: "LKR " + m[1], note: m[2], value: +m[1].replace(/,/g, "") };
 }
 const priceText = (p) => { const x = priceParts(p); return x.note ? `${x.main} ${x.note}` : x.main; };
-const orderMsg = (b) => `Hello Malsilu Flora, I'd like to enquire about ${b.code} – ${b.name} (${priceText(b.price)}).`;
+// link that opens this bouquet on the site; share pages give WhatsApp a photo preview
+const bouquetLink = (b) => HAS_PAGE.has(b.code)
+  ? `${SITE}/b/${b.code.toLowerCase()}.html`
+  : `${SITE}/?b=${encodeURIComponent(b.code)}`;
+const orderMsg = (b) => [
+  "Hello Malsilu Flora, I'd like to order this:",
+  `*${b.code} – ${b.name}*`,
+  `${catOf(b.cat)?.name || ""} · ${priceText(b.price)}`,
+  "",
+  bouquetLink(b),
+].join("\n");
 
 /* ---------- data: Supabase first, data.js as the backup ---------- */
-const CFG = window.MALSILU_CONFIG || {};
 const LIVE = !!(CFG.supabaseUrl && CFG.supabaseKey);
-const BACKUP = typeof BOUQUETS !== "undefined" ? BOUQUETS : [];
 const CACHE_KEY = "malsilu-bouquets-v1";
 const apiBase = (CFG.supabaseUrl || "").replace(/\/+$/, "");
 const photoURL = (path, v) => /^(https?:|images\/)/.test(path)
@@ -125,7 +131,7 @@ $("#ribbon").innerHTML = ribbonHalf + ribbonHalf;
 /* ---------- collections ---------- */
 function buildCollections() {
   $("#catCards").innerHTML = CATS.filter((c) => byCat[c.id].length).map((c, i) => {
-  const b = ALL.find((x) => x.code === COVER[c.id] && x.cat === c.id) || byCat[c.id][0];
+  const b = ALL.find((x) => x.code === c.cover && x.cat === c.id) || byCat[c.id][0];
   return `<button class="coll" data-cat="${c.id}" data-reveal style="transition-delay:${i * 80}ms">
     <span class="arch"><span class="arch-clip"><img src="${b.img}" alt="" loading="lazy" decoding="async" width="700" height="1000"></span></span>
     <span class="coll-name">${esc(c.name)}</span>
@@ -133,7 +139,18 @@ function buildCollections() {
   </button>`;
   }).join("");
   reveal($$("#catCards [data-reveal]"));
+  collNav();
 }
+// arrows beside the collection row (desktop); hidden at either end
+const collRow = $("#catCards");
+function collNav() {
+  const max = collRow.scrollWidth - collRow.clientWidth - 2;
+  $$(".coll-nav").forEach((b) => (b.disabled = +b.dataset.scroll < 0 ? collRow.scrollLeft <= 2 : collRow.scrollLeft >= max));
+}
+$$(".coll-nav").forEach((b) => b.addEventListener("click", () =>
+  collRow.scrollBy({ left: +b.dataset.scroll * collRow.clientWidth * 0.8, behavior: reduceMotion ? "auto" : "smooth" })));
+collRow.addEventListener("scroll", collNav, { passive: true });
+addEventListener("resize", collNav);
 $("#catCards").addEventListener("click", (e) => {
   const btn = e.target.closest("[data-cat]");
   if (!btn) return;
@@ -283,7 +300,15 @@ function openModal(list, i) {
   // preload neighbours for instant next/prev
   if (many) [1, -1].forEach((d) => { new Image().src = list[(i + d + list.length) % list.length].img; });
   if (!modal.open) modal.showModal();
+  setLinkCode(b.code);
 }
+// keep ?b=ML-01 in the address while a bouquet is open, so the page link opens it again
+function setLinkCode(code) {
+  const u = new URL(location.href);
+  if (code) u.searchParams.set("b", code); else u.searchParams.delete("b");
+  if (u.href !== location.href) history.replaceState(null, "", u);
+}
+modal.addEventListener("close", () => setLinkCode(null));
 const step = (d) => openModal(mList, (current + d + mList.length) % mList.length);
 $("#mPrev").onclick = () => step(-1);
 $("#mNext").onclick = () => step(1);
@@ -314,5 +339,20 @@ function build(list) {
   buildTabs();
   buildPrices();
   render();
+  openLinked();
+}
+
+// a link like ?b=ML-01 (from a WhatsApp order) opens that bouquet straight away
+let linkedDone = false;
+function openLinked() {
+  if (linkedDone) return;
+  const code = (new URLSearchParams(location.search).get("b") || "").trim().toUpperCase();
+  if (!code) { linkedDone = true; return; }
+  const b = ALL.find((x) => x.code === code);
+  if (!b) { if (!LIVE) { linkedDone = true; setLinkCode(null); } return; } // with Supabase, fresh data may still bring it
+  linkedDone = true;
+  $("#collection").scrollIntoView({ behavior: "auto" });
+  const list = byCat[b.cat];
+  openModal(list, list.indexOf(b));
 }
 loadBouquets().then(build);

@@ -31,15 +31,17 @@ Until you finish these steps, the website keeps working exactly as before from `
    Never use the **secret** / **service_role** key here.
 4. Commit and push, or ask Claude to do it.
 
-## 5. Import your 100 bouquets
+## 5. Import your bouquets
 1. Open `https://<your-site>/admin.html` and sign in.
-2. Click **Import bouquets**. This uploads every photo and bouquet from the website into Supabase (about a minute).
+2. Click **Import bouquets**. This uploads every photo and bouquet from the website into Supabase (a few minutes for 306).
 3. Done. From now on the website loads bouquets from Supabase.
 
 ## Day-to-day
 - **Change a price or text:** click the bouquet, edit, **Save**.
 - **Take a bouquet off the site but keep it:** turn off its switch.
-- **New bouquet:** **Add bouquet**. The next code (ML-111…) is filled in for you, and big photos are resized automatically.
+- **New bouquet:** **Add bouquet**. The next free code is filled in for you, and big photos are resized automatically.
+- **New categories:** add them to `categories.js`.
+- **Bouquets added to `data.js` later** (for example from a new Word menu): open the admin page and press **Import bouquets** again. Only the missing ones are added.
 - **Order on the website:** use the ↑ ↓ arrows (clear the search first).
 - Changes show on the website the next time a visitor opens it.
 
