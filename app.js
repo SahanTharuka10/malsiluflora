@@ -26,8 +26,50 @@ function priceParts(p) {
 const priceText = (p) => { const x = priceParts(p); return x.note ? `${x.main} ${x.note}` : x.main; };
 const orderMsg = (b) => `Hello Malsilu Flora, I'd like to enquire about ${b.code} – ${b.name} (${priceText(b.price)}).`;
 
-const byCat = Object.fromEntries(CATS.map((c) => [c.id, BOUQUETS.filter((b) => b.cat === c.id)]));
-$$("[data-count]").forEach((el) => (el.textContent = BOUQUETS.length));
+/* ---------- data: Supabase first, data.js as the backup ---------- */
+const CFG = window.MALSILU_CONFIG || {};
+const LIVE = !!(CFG.supabaseUrl && CFG.supabaseKey);
+const BACKUP = typeof BOUQUETS !== "undefined" ? BOUQUETS : [];
+const CACHE_KEY = "malsilu-bouquets-v1";
+const apiBase = (CFG.supabaseUrl || "").replace(/\/+$/, "");
+const photoURL = (path, v) => /^(https?:|images\/)/.test(path)
+  ? path
+  : `${apiBase}/storage/v1/object/public/${CFG.bucket || "bouquets"}/${path.split("/").map(encodeURIComponent).join("/")}${v ? "?v=" + v : ""}`;
+const fromRow = (r) => ({
+  code: r.code, name: r.name, desc: r.description || "", tags: r.tags || "", price: r.price || "On request",
+  cat: r.category, img: r.image_path ? photoURL(r.image_path, Date.parse(r.updated_at) || "") : "images/logo.png",
+});
+
+async function fetchLive() {
+  const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 8000);
+  try {
+    const res = await fetch(`${apiBase}/rest/v1/bouquets?select=code,name,description,tags,price,category,image_path,updated_at&active=is.true&order=sort_order.asc,code.asc`,
+      { headers: { apikey: CFG.supabaseKey }, signal: ctl.signal });
+    if (!res.ok) throw new Error(`Supabase ${res.status}`);
+    const list = (await res.json()).map(fromRow).filter((b) => catOf(b.cat));
+    if (!list.length) throw new Error("no bouquets in Supabase yet");
+    return list;
+  } finally { clearTimeout(timer); }
+}
+
+// Show the last saved list straight away, then refresh it from Supabase in the background.
+async function loadBouquets() {
+  if (!LIVE) return BACKUP;
+  let cached = null;
+  try { cached = JSON.parse(localStorage.getItem(CACHE_KEY)); } catch {}
+  const fresh = fetchLive().then((list) => {
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify(list)); } catch {}
+    return list;
+  });
+  if (Array.isArray(cached) && cached.length) {
+    fresh.then((list) => { if (JSON.stringify(list) !== JSON.stringify(cached)) build(list); })
+      .catch((e) => console.warn("Using saved bouquets:", e.message));
+    return cached;
+  }
+  try { return await fresh; } catch (e) { console.warn("Using built-in bouquets:", e.message); return BACKUP; }
+}
+
+let ALL = [], byCat = {};
 
 /* ---------- reveal on scroll ---------- */
 const io = "IntersectionObserver" in window && !reduceMotion
@@ -81,15 +123,17 @@ const ribbonHalf = ribbonItems.map((t) => `<span>${esc(t)}</span>`).join("");
 $("#ribbon").innerHTML = ribbonHalf + ribbonHalf;
 
 /* ---------- collections ---------- */
-$("#catCards").innerHTML = CATS.map((c, i) => {
-  const b = BOUQUETS.find((x) => x.code === COVER[c.id]) || byCat[c.id][0];
+function buildCollections() {
+  $("#catCards").innerHTML = CATS.filter((c) => byCat[c.id].length).map((c, i) => {
+  const b = ALL.find((x) => x.code === COVER[c.id] && x.cat === c.id) || byCat[c.id][0];
   return `<button class="coll" data-cat="${c.id}" data-reveal style="transition-delay:${i * 80}ms">
     <span class="arch"><span class="arch-clip"><img src="${b.img}" alt="" loading="lazy" decoding="async" width="700" height="1000"></span></span>
     <span class="coll-name">${esc(c.name)}</span>
     <span class="coll-meta">${byCat[c.id].length} designs ${icon("arrow")}</span>
   </button>`;
-}).join("");
-reveal($$("#catCards [data-reveal]"));
+  }).join("");
+  reveal($$("#catCards [data-reveal]"));
+}
 $("#catCards").addEventListener("click", (e) => {
   const btn = e.target.closest("[data-cat]");
   if (!btn) return;
@@ -101,8 +145,9 @@ $("#catCards").addEventListener("click", (e) => {
 const state = { cat: "all", q: "", sort: "featured", shown: PAGE };
 let visible = [];
 
-$("#tabs").innerHTML = [{ id: "all", short: "All", n: BOUQUETS.length }, ...CATS.map((c) => ({ ...c, n: byCat[c.id].length }))]
-  .map((c) => `<button class="tab" role="tab" data-cat="${c.id}">${esc(c.short)} <small>${c.n}</small></button>`).join("");
+const buildTabs = () => ($("#tabs").innerHTML = [{ id: "all", short: "All", n: ALL.length }, ...CATS.map((c) => ({ ...c, n: byCat[c.id].length }))]
+  .filter((c) => c.id === "all" || c.n)
+  .map((c) => `<button class="tab" role="tab" data-cat="${c.id}">${esc(c.short)} <small>${c.n}</small></button>`).join(""));
 $("#tabs").addEventListener("click", (e) => { const t = e.target.closest("[data-cat]"); if (t) setCat(t.dataset.cat); });
 
 let searchTimer;
@@ -152,7 +197,8 @@ function cardHTML(b, i) {
 function render(append = false) {
   $$(".tab").forEach((t) => t.setAttribute("aria-selected", t.dataset.cat === state.cat));
   $("#catBlurb").textContent = state.cat === "all" ? "Every bouquet at a glance — tap any design for details and ordering." : catOf(state.cat).blurb;
-  visible = sorted(BOUQUETS.filter((b) =>
+  if (state.cat !== "all" && !byCat[state.cat]?.length) state.cat = "all";
+  visible = sorted(ALL.filter((b) =>
     (state.cat === "all" || b.cat === state.cat) &&
     (!state.q || [b.code, b.name, b.desc, b.tags, catOf(b.cat).name].join(" ").toLowerCase().includes(state.q))));
 
@@ -188,20 +234,25 @@ $("#grid").addEventListener("click", (e) => {
 
 /* ---------- price list ---------- */
 const openFirst = matchMedia("(min-width: 761px)").matches; // on phones every list starts folded
-$("#priceMenus").innerHTML = CATS.map((c, ci) => {
+function buildPrices() {
+  const wasOpen = new Set($$("#priceMenus details[open]").map((d) => d.dataset.cat));
+  const first = !$("#priceMenus details");
+  $("#priceMenus").innerHTML = CATS.filter((c) => byCat[c.id].length).map((c, ci) => {
   const list = byCat[c.id];
   const vals = list.map((b) => priceParts(b.price).value).filter((v) => v !== null);
   const fmt = (v) => v.toLocaleString("en-US");
   const range = vals.length ? `LKR ${fmt(Math.min(...vals))} – ${fmt(Math.max(...vals))}` : "Price on request";
-  return `<details class="menu" data-reveal ${ci === 0 && openFirst ? "open" : ""}>
+  const open = first ? ci === 0 && openFirst : wasOpen.has(c.id);
+  return `<details class="menu" data-cat="${c.id}" data-reveal ${open ? "open" : ""}>
     <summary><h3>${esc(c.name)}</h3><span class="m-meta">${list.length} designs<br>${range}</span><span class="chev" aria-hidden="true"></span></summary>
     <div class="menu-grid">${list.map((b, i) => {
       const p = priceParts(b.price);
       return `<button class="mrow" data-cat="${c.id}" data-i="${i}"><span class="mc">${b.code}</span><span class="mn">${esc(b.name)}</span><span class="dots"></span><span class="mp">${esc(p.value === null ? p.main : p.main.replace("LKR ", ""))}${p.note ? `<small>${esc(p.note)}</small>` : ""}</span></button>`;
     }).join("")}</div>
   </details>`;
-}).join("");
-reveal($$("#priceMenus [data-reveal]"));
+  }).join("");
+  reveal($$("#priceMenus [data-reveal]"));
+}
 $("#priceMenus").addEventListener("click", (e) => {
   const r = e.target.closest(".mrow");
   if (r) openModal(byCat[r.dataset.cat], +r.dataset.i);
@@ -253,4 +304,15 @@ $("#mImgWrap").addEventListener("touchend", (e) => {
 });
 
 $("#yr").textContent = new Date().getFullYear();
-render();
+
+/* ---------- build everything that depends on the bouquet list ---------- */
+function build(list) {
+  ALL = list;
+  byCat = Object.fromEntries(CATS.map((c) => [c.id, ALL.filter((b) => b.cat === c.id)]));
+  $$("[data-count]").forEach((el) => (el.textContent = ALL.length));
+  buildCollections();
+  buildTabs();
+  buildPrices();
+  render();
+}
+loadBouquets().then(build);

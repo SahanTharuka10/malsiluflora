@@ -208,6 +208,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) - 1px)}
 .empty{grid-column:1/-1;text-align:center;padding:64px 20px;color:var(--muted)}
 .empty h3{font-size:1.8rem;color:var(--ink);margin-bottom:8px}
 .empty .btn{margin-top:20px}
+.grid .loading{grid-column:1/-1;text-align:center;padding:64px 20px;color:var(--muted);font:italic 400 1.3rem var(--serif);margin:0}
 .more{display:flex;justify-content:center;margin-top:52px}
 
 /* ---------- how to order ---------- */

@@ -6,4 +6,8 @@ Website for Malsilu Flora, Kiribathgoda, Sri Lanka: cascade bridal bouquets, rou
 - Price list in LKR
 - Order straight from a bouquet on WhatsApp: 075 859 6506
 
-To change bouquets or prices, edit `data.js`.
+## Managing bouquets
+Bouquets and photos live in a free Supabase database and are managed at **admin.html**.
+Set-up steps: [supabase/README.md](supabase/README.md).
+
+`data.js` and the `images` folder are the backup the site uses if Supabase isn't connected or can't be reached.
