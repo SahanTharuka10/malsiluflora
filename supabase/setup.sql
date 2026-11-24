@@ -65,6 +65,13 @@ drop policy if exists "Admins can see admins" on public.admins;
 create policy "Admins can see admins" on public.admins
   for select using (public.is_admin());
 
+-- Table access for the website (the rules above still decide which rows) --
+grant usage on schema public to anon, authenticated;
+grant select on public.bouquets to anon, authenticated;
+grant insert, update, delete on public.bouquets to authenticated;
+grant select on public.admins to authenticated;
+grant execute on function public.is_admin() to anon, authenticated;
+
 -- Photo storage (public to view, admins to change) ----------
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values ('bouquets', 'bouquets', true, 5242880, array['image/jpeg','image/png','image/webp'])

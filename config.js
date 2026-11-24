@@ -7,7 +7,7 @@
 window.MALSILU_CONFIG = {
   // the live website address, used for bouquet links in WhatsApp orders
   siteUrl: "https://malsiluflora.vercel.app",
-  supabaseUrl: "",
-  supabaseKey: "",
+  supabaseUrl: "https://wyzurefcvnubmhtsnxmm.supabase.co",
+  supabaseKey: "sb_publishable_gDtMs_F2dsWnKMkOHfQ4vQ_b7QdY4n2",
   bucket: "bouquets",
 };
