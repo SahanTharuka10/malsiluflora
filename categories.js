@@ -1,4 +1,4 @@
-// Bouquet categories, in the order they appear on the website and in the admin page.
+// Bouquet categories, in the order they appear on the website.
 // id    – stored on each bouquet in the database (don't rename once used)
 // cover – the bouquet whose photo is shown on the collection arch
 window.MALSILU_CATS = [

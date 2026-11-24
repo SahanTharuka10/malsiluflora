@@ -1,50 +1,26 @@
-# Putting the bouquets in Supabase (free)
+# Supabase (database)
 
-Once this is set up, all bouquets and photos live in your free Supabase database.
-You manage them at **admin.html** on your website: add, edit, hide, reorder and delete, with no code.
+The website reads its bouquets from the Supabase project **malsilu-flora**
+(Asia-Pacific). It is view-only: the site has no sign-in, and the database
+rules let the public read bouquets but never change them.
 
-Until you finish these steps, the website keeps working exactly as before from `data.js` and the `images` folder.
+- Table: `bouquets` (code, name, description, tags, price, category,
+  image_path, sort_order, active)
+- Photos: served from the website's `images/` folder; `image_path` holds
+  that path, e.g. `images/ml-01.jpg`
+- Connection: `config.js` (project URL and publishable key, safe for the browser)
+- Setup script: [`setup.sql`](setup.sql) (already run)
 
-## 1. Create the free project
-1. Go to **supabase.com** and sign up (the Free plan is enough: 500 MB database, 1 GB photo storage).
-2. Click **New project**, name it `malsilu-flora`, choose a strong database password, pick the region **Singapore**, and create it.
+If Supabase is paused or unreachable, the site falls back to `data.js` and
+the `images/` folder automatically.
 
-## 2. Create the table and photo storage
-1. In the project, open **SQL Editor** and click **New query**.
-2. Paste everything from [`setup.sql`](setup.sql).
-3. At the very bottom, change `your-email@example.com` to the email you'll use to sign in.
-4. Click **Run**. You should see "Success. No rows returned".
-
-## 3. Create your admin login
-1. Open **Authentication → Users → Add user → Create new user**.
-2. Enter the **same email** as in step 2, choose a password, and tick **Auto Confirm User**.
-3. Open **Authentication → Sign In / Providers** and turn **off** "Allow new users to sign up", so nobody else can make an account.
-
-## 4. Connect the website
-1. Open **Project Settings → API Keys** (or click **Connect** at the top).
-2. Copy the **Project URL** and the **publishable key** (older projects call it the **anon public** key).
-3. Paste them into [`config.js`](../config.js):
-   ```js
-   supabaseUrl: "https://xxxxxxxx.supabase.co",
-   supabaseKey: "sb_publishable_...",
-   ```
-   Never use the **secret** / **service_role** key here.
-4. Commit and push, or ask Claude to do it.
-
-## 5. Import your bouquets
-1. Open `https://<your-site>/admin.html` and sign in.
-2. Click **Import bouquets**. This uploads every photo and bouquet from the website into Supabase (a few minutes for 306).
-3. Done. From now on the website loads bouquets from Supabase.
-
-## Day-to-day
-- **Change a price or text:** click the bouquet, edit, **Save**.
-- **Take a bouquet off the site but keep it:** turn off its switch.
-- **New bouquet:** **Add bouquet**. The next free code is filled in for you, and big photos are resized automatically.
-- **New categories:** add them to `categories.js`.
-- **Bouquets added to `data.js` later** (for example from a new Word menu): open the admin page and press **Import bouquets** again. Only the missing ones are added.
-- **Order on the website:** use the ↑ ↓ arrows (clear the search first).
-- Changes show on the website the next time a visitor opens it.
+## Updating bouquets
+1. Update `data.js` and `images/` (for example from a new Word menu).
+2. Rebuild the share pages: `python tools/build_share_pages.py`
+3. In Supabase, open **SQL Editor** and run an insert for the new rows
+   (Claude can generate it from `data.js`). To hide an item without
+   deleting it, run: `update public.bouquets set active = false where code = 'ML-01';`
 
 ## Notes
-- Free Supabase projects **pause after 7 days with no visits**. If that happens the website automatically falls back to the built-in list. Click **Restore** in the Supabase dashboard to wake it up.
-- `data.js` and the `images` folder stay in the project as a backup.
+- Free Supabase projects pause after 7 days with no visits. The site keeps
+  working from `data.js`; click **Restore** in the dashboard to wake it.

@@ -375,7 +375,7 @@ const BOUQUETS = [
   "tags": "Bridal bouquets / Bridesmaids",
   "price": "20,000",
   "img": "images/ml-42.jpg",
-  "cat": "cascade"
+  "cat": "round"
  },
  {
   "code": "ML-44",
@@ -627,7 +627,7 @@ const BOUQUETS = [
   "tags": "Weddings / Engagements / Receptions",
   "price": "20,000",
   "img": "images/ml-73.jpg",
-  "cat": "round"
+  "cat": "colour"
  },
  {
   "code": "ML-74",
@@ -1005,7 +1005,7 @@ const BOUQUETS = [
   "tags": "Birthdays / Congratulations",
   "price": "1,000",
   "img": "images/ml-141.jpg",
-  "cat": "rose"
+  "cat": "mixed"
  },
  {
   "code": "ML-154",
@@ -1293,7 +1293,7 @@ const BOUQUETS = [
   "tags": "Gifts / Rustic themes",
   "price": "800",
   "img": "images/ml-179.jpg",
-  "cat": "mixed"
+  "cat": "pastel"
  },
  {
   "code": "ML-167",
@@ -1455,7 +1455,7 @@ const BOUQUETS = [
   "tags": "Birthdays / Thank-you gifts",
   "price": "350",
   "img": "images/ml-186.jpg",
-  "cat": "pastel"
+  "cat": "mini"
  },
  {
   "code": "ML-187",
@@ -1509,7 +1509,7 @@ const BOUQUETS = [
   "tags": "Wedding cars / Homecoming cars",
   "price": "7,500",
   "img": "images/ml-101.jpg",
-  "cat": "mini"
+  "cat": "car"
  },
  {
   "code": "ML-102",
@@ -2301,7 +2301,7 @@ const BOUQUETS = [
   "tags": "Church weddings / Ceremonies",
   "price": "On request",
   "img": "images/ml-109.jpg",
-  "cat": "stage"
+  "cat": "arch"
  },
  {
   "code": "ML-252",
@@ -2427,7 +2427,7 @@ const BOUQUETS = [
   "tags": "Entrances / Hotel lobbies",
   "price": "15,000 per piece",
   "img": "images/ml-262.jpg",
-  "cat": "arch"
+  "cat": "stands"
  },
  {
   "code": "ML-263",

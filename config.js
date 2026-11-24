@@ -1,4 +1,4 @@
-// Supabase connection for the website and the admin page.
+// Supabase connection for the website (read-only: the site has no sign-in).
 // Find both values in Supabase: Project Settings → API (or "Connect").
 // The publishable / anon key is safe to put here: it can only do what the
 // database rules in supabase/setup.sql allow. Never paste the secret or

@@ -173,11 +173,23 @@ $("#search").addEventListener("input", (e) => {
   searchTimer = setTimeout(() => { state.q = e.target.value.trim().toLowerCase(); state.shown = PAGE; render(); }, 120);
 });
 $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; state.shown = PAGE; render(); });
-$("#moreBtn").addEventListener("click", () => { state.shown += PAGE; render(true); });
+const loadMore = () => { if (state.shown < visible.length) { state.shown += PAGE; render(true); } };
+$("#moreBtn").addEventListener("click", loadMore);
+// load the next bouquets automatically as the visitor scrolls near the end of the gallery
+const autoMore = "IntersectionObserver" in window;
+if (autoMore) {
+  document.body.classList.add("auto-more");
+  new IntersectionObserver((entries) => { if (entries[0].isIntersecting) loadMore(); }, { rootMargin: "0px 0px 700px 0px" })
+    .observe($(".more"));
+}
 
 function setCat(cat) {
   state.cat = cat; state.shown = PAGE;
   render();
+  // keep ?c=rose in the address so the page link can be shared for this category
+  const u = new URL(location.href);
+  if (cat === "all") u.searchParams.delete("c"); else u.searchParams.set("c", cat);
+  if (u.href !== location.href) history.replaceState(null, "", u);
   $(`.tab[data-cat="${cat}"]`)?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
 }
 
@@ -241,6 +253,11 @@ function render(append = false) {
   const more = $("#moreBtn"), left = visible.length - shown;
   more.hidden = left <= 0;
   more.textContent = `Show ${Math.min(left, PAGE)} more · ${left} remaining`;
+  $(".more").classList.toggle("has-more", left > 0);
+  // on tall screens the end of the gallery can still be in view after a batch: keep filling
+  if (autoMore && left > 0) requestAnimationFrame(() => {
+    if ($(".more").getBoundingClientRect().top < innerHeight + 700 && $("#grid").getBoundingClientRect().bottom > 0) loadMore();
+  });
 }
 
 $("#grid").addEventListener("click", (e) => {
@@ -380,7 +397,14 @@ function startHeroFade() {
 let linkedDone = false;
 function openLinked() {
   if (linkedDone) return;
-  const code = (new URLSearchParams(location.search).get("b") || "").trim().toUpperCase();
+  const params = new URLSearchParams(location.search);
+  // a category link like ?c=rose opens the gallery on that category
+  const cat = (params.get("c") || "").trim().toLowerCase();
+  if (cat && byCat[cat]?.length && state.cat !== cat) {
+    setCat(cat);
+    requestAnimationFrame(() => $("#collection").scrollIntoView({ behavior: "auto" }));
+  }
+  const code = (params.get("b") || "").trim().toUpperCase();
   if (!code) { linkedDone = true; return; }
   const b = ALL.find((x) => x.code === code);
   if (!b) { if (!LIVE) { linkedDone = true; setLinkCode(null); } return; } // with Supabase, fresh data may still bring it

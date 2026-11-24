@@ -223,6 +223,11 @@ section[id]{scroll-margin-top:calc(var(--nav-h) - 1px)}
 .empty .btn{margin-top:20px}
 .grid .loading{grid-column:1/-1;text-align:center;padding:64px 20px;color:var(--muted);font:italic 400 1.3rem var(--serif);margin:0}
 .more{display:flex;justify-content:center;margin-top:52px}
+/* auto-loading on scroll: the button becomes a quiet "loading" mark */
+.auto-more #moreBtn{display:none}
+.auto-more .more{min-height:40px;margin-top:36px}
+.auto-more .more.has-more::before{content:"";width:28px;height:28px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--plum);animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 /* ---------- how to order ---------- */
 .how{position:relative;overflow:hidden;background:var(--plum-900);color:#fff;padding:108px 0}

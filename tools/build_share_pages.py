@@ -84,3 +84,39 @@ for b in bouquets:
     )
     open(os.path.join(OUT, f"{code.lower()}.html"), "w", encoding="utf8", newline="\n").write(page)
 print(f"Wrote {len(bouquets)} share pages to b/ for {site}")
+
+# one page per category: c/<id>.html opens the gallery on that category
+COUT = os.path.join(ROOT, "c")
+if os.path.isdir(COUT):
+    shutil.rmtree(COUT)
+os.makedirs(COUT)
+links = []
+for line in cats_src.splitlines():
+    m = re.search(r'id:\s*"([^"]+)",\s*name:\s*"([^"]+)"', line)
+    if not m:
+        continue
+    cid, cname = m.groups()
+    items = [b for b in bouquets if b["cat"] == cid]
+    if not items:
+        continue
+    cover = re.search(r'cover:\s*"([^"]+)"', line)
+    first = next((b for b in items if cover and b["code"] == cover.group(1)), items[0])
+    blurb = re.search(r'blurb:\s*"([^"]+)"', line)
+    target = f"{site}/?c={cid}"
+    e = lambda s: html.escape(s, quote=True)
+    page = PAGE.format(
+        title=e(f"{cname} · Malsilu Flora"),
+        name=e(cname),
+        code=e(f"{len(items)} designs"),
+        desc=e(f"{len(items)} designs. {blurb.group(1) if blurb else ''} Order on WhatsApp.".strip()),
+        price=e("Malsilu Flora · Kiribathgoda"),
+        page=e(f"{site}/c/{cid}.html"),
+        image=e(f"{site}/{first['img']}"),
+        target=e(target),
+        target_js=json.dumps(target),
+    )
+    open(os.path.join(COUT, f"{cid}.html"), "w", encoding="utf8", newline="\n").write(page)
+    links.append((cname, len(items), f"{site}/c/{cid}.html"))
+print(f"Wrote {len(links)} category pages to c/")
+for name, n, url in links:
+    print(f"  {name} ({n}): {url}")
