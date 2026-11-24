@@ -266,32 +266,6 @@ $("#grid").addEventListener("click", (e) => {
   if (c) openModal(visible, +c.dataset.i);
 });
 
-/* ---------- price list ---------- */
-const openFirst = matchMedia("(min-width: 761px)").matches; // on phones every list starts folded
-function buildPrices() {
-  const wasOpen = new Set($$("#priceMenus details[open]").map((d) => d.dataset.cat));
-  const first = !$("#priceMenus details");
-  $("#priceMenus").innerHTML = CATS.filter((c) => byCat[c.id].length).map((c, ci) => {
-  const list = byCat[c.id];
-  const vals = list.map((b) => priceParts(b.price).value).filter((v) => v !== null);
-  const fmt = (v) => v.toLocaleString("en-US");
-  const range = vals.length ? `LKR ${fmt(Math.min(...vals))} – ${fmt(Math.max(...vals))}` : "Price on request";
-  const open = first ? ci === 0 && openFirst : wasOpen.has(c.id);
-  return `<details class="menu" data-cat="${c.id}" data-reveal ${open ? "open" : ""}>
-    <summary><h3>${esc(c.name)}</h3><span class="m-meta">${list.length} designs<br>${range}</span><span class="chev" aria-hidden="true"></span></summary>
-    <div class="menu-grid">${list.map((b, i) => {
-      const p = priceParts(b.price);
-      return `<button class="mrow" data-cat="${c.id}" data-i="${i}"><span class="mc">${b.code}</span><span class="mn">${esc(b.name)}</span><span class="dots"></span><span class="mp">${esc(p.value === null ? p.main : p.main.replace("LKR ", ""))}${p.note ? `<small>${esc(p.note)}</small>` : ""}</span></button>`;
-    }).join("")}</div>
-  </details>`;
-  }).join("");
-  reveal($$("#priceMenus [data-reveal]"));
-}
-$("#priceMenus").addEventListener("click", (e) => {
-  const r = e.target.closest(".mrow");
-  if (r) openModal(byCat[r.dataset.cat], +r.dataset.i);
-});
-
 /* ---------- modal ---------- */
 const modal = $("#modal"), mImg = $("#mImg");
 let mList = [], current = -1;
@@ -356,7 +330,6 @@ function build(list) {
   startHeroFade();
   buildCollections();
   buildTabs();
-  buildPrices();
   render();
   openLinked();
 }
