@@ -846,81 +846,144 @@ const BOUQUETS = [
   "cat": "party"
  },
  {
-  "code": "ML-115",
-  "name": "Rose Parade",
-  "desc": "Red, ivory, peach and coral roses with soft fern, wrapped in a delicate lace-print paper.",
-  "tags": "Anniversaries / Birthdays",
-  "price": "8,950",
-  "img": "images/ml-115.jpg",
+  "code": "ML-118",
+  "name": "Blush Trio Roses",
+  "desc": "(5 Roses)",
+  "tags": "Birthdays / Valentine's Day",
+  "price": "2,500",
+  "img": "images/ml-118.jpg",
   "cat": "rose"
  },
  {
-  "code": "ML-116",
-  "name": "Peach Rose Posy",
-  "desc": "Red, pink and peach roses with a cloud of baby's breath in a soft peach wrap.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "9,500",
-  "img": "images/ml-116.jpg",
+  "code": "ML-125",
+  "name": "Burgundy Rose Wrap",
+  "desc": "(05 Roses)",
+  "tags": "Anniversaries / Birthdays",
+  "price": "2,500",
+  "img": "images/ml-125.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-115",
+  "name": "Rose Parade (05 Roses)",
+  "desc": "Red, ivory, peach and coral roses with soft fern, wrapped in a delicate lace-print paper.",
+  "tags": "Anniversaries / Birthdays",
+  "price": "3,000",
+  "img": "images/ml-115.jpg",
   "cat": "rose"
  },
  {
   "code": "ML-117",
   "name": "Noir Rose Bouquet",
-  "desc": "Red and ivory roses with pink limonium, set in a bold black wrap with a satin bow.",
+  "desc": "(10 Roses)",
   "tags": "Anniversaries / Date nights",
-  "price": "9,950",
+  "price": "5,000",
   "img": "images/ml-117.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-118",
-  "name": "Blush Trio Roses",
-  "desc": "Three large garden roses in coral, blush and ivory in a pink wrap with a satin bow.",
-  "tags": "Birthdays / Valentine's Day",
-  "price": "7,450",
-  "img": "images/ml-118.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-119",
-  "name": "Red Rose Spray",
-  "desc": "Fresh red roses with white filler flowers and greenery in a clear wrap.",
-  "tags": "Anniversaries / Get-well wishes",
-  "price": "8,500",
-  "img": "images/ml-119.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-120",
-  "name": "Red & Ivory Rose Bouquet",
-  "desc": "Deep red and ivory roses with white fillers in a pink wrap, finished with a red ribbon.",
-  "tags": "Anniversaries / Engagements",
-  "price": "12,500",
-  "img": "images/ml-120.jpg",
   "cat": "rose"
  },
  {
   "code": "ML-121",
   "name": "Ruby Mini Roses",
-  "desc": "A petite bouquet of red roses and baby's breath in a black wrap with a red bow.",
+  "desc": "(10 Roses)",
   "tags": "Valentine's Day / Small gifts",
-  "price": "5,950",
+  "price": "5,000",
   "img": "images/ml-121.jpg",
   "cat": "rose"
  },
  {
   "code": "ML-122",
   "name": "Crimson Rose Bouquet",
-  "desc": "A dozen red roses with baby's breath and green foliage in a black and kraft wrap.",
+  "desc": "(10 Roses)",
   "tags": "Anniversaries / Proposals",
-  "price": "14,500",
+  "price": "5,000",
   "img": "images/ml-122.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-126",
+  "name": "Scarlet Rose Bouquet",
+  "desc": "(10 Roses)",
+  "tags": "Anniversaries / Valentine's Day",
+  "price": "5,000",
+  "img": "images/ml-126.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-272",
+  "name": "Ruby Rose Black Wrap",
+  "desc": "(10 Roses)",
+  "tags": "Valentine's Day / Anniversaries",
+  "price": "5,000",
+  "img": "images/ml-272.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-275",
+  "name": "Noir Red Rose Bouquet",
+  "desc": "(10 Roses)",
+  "tags": "Valentine's Day / Anniversaries",
+  "price": "5,000",
+  "img": "images/ml-275.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-128",
+  "name": "Midnight Rose & Gypsophila",
+  "desc": "(10 Roses)",
+  "tags": "Date nights / Anniversaries",
+  "price": "6,500",
+  "img": "images/ml-128.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-273",
+  "name": "Red & Ivory Noir Bouquet (Dry mix)",
+  "desc": "(10 Roses)",
+  "tags": "Anniversaries / Date nights",
+  "price": "6,500",
+  "img": "images/ml-273.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-116",
+  "name": "Peach Rose Posy",
+  "desc": "(20 Roses)",
+  "tags": "Birthdays / Thank-you gifts",
+  "price": "10,000",
+  "img": "images/ml-116.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-120",
+  "name": "Red & Ivory Rose Bouquet (20 Roses)",
+  "desc": "Deep red and ivory roses with white fillers in a pink wrap, finished with a red ribbon.",
+  "tags": "Anniversaries / Engagements",
+  "price": "10,000",
+  "img": "images/ml-120.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-274",
+  "name": "Red & White Rose Wrap (20 Roses)",
+  "desc": "Deep red and white roses with fillers in a pink and orange polka-dot wrap with a red ribbon.",
+  "tags": "Anniversaries / Birthdays",
+  "price": "10,000",
+  "img": "images/ml-274.jpg",
+  "cat": "rose"
+ },
+ {
+  "code": "ML-130",
+  "name": "Homecoming Posy",
+  "desc": "Red roses, alstroemeria and berries gathered into one rich red bouquet.",
+  "tags": "Anniversaries / Gifts",
+  "price": "18,000",
+  "img": "images/ml-130.jpg",
   "cat": "rose"
  },
  {
   "code": "ML-123",
   "name": "Red Rose Grand",
-  "desc": "A large, dense bouquet of red roses wrapped in white and peach paper for a dramatic gift.",
+  "desc": "(50 Roses)",
   "tags": "Proposals / Special anniversaries",
   "price": "22,500",
   "img": "images/ml-123.jpg",
@@ -928,326 +991,29 @@ const BOUQUETS = [
  },
  {
   "code": "ML-124",
-  "name": "Red Rose Ribbon Bouquet",
+  "name": "Red Rose Ribbon Bouquet (50 Flowers)",
   "desc": "A generous round of red roses in white wrap, tied with a bright red satin ribbon.",
   "tags": "Anniversaries / Valentine's Day",
-  "price": "18,500",
+  "price": "22,500",
   "img": "images/ml-124.jpg",
   "cat": "rose"
- },
- {
-  "code": "ML-125",
-  "name": "Burgundy Rose Wrap",
-  "desc": "Rich red roses with white fillers and greenery in a black and kraft wrap with a red bow.",
-  "tags": "Anniversaries / Birthdays",
-  "price": "11,500",
-  "img": "images/ml-125.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-126",
-  "name": "Scarlet Rose Bouquet",
-  "desc": "Nine large red roses with baby's breath, wrapped in black and tied with a satin ribbon.",
-  "tags": "Anniversaries / Valentine's Day",
-  "price": "12,500",
-  "img": "images/ml-126.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-127",
-  "name": "Rose Noir Bow",
-  "desc": "Red roses with fresh greenery in a black wrap finished with a big red bow.",
-  "tags": "Birthdays / Anniversaries",
-  "price": "10,500",
-  "img": "images/ml-127.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-128",
-  "name": "Midnight Rose & Gypsophila",
-  "desc": "Red roses in a cloud of baby's breath, wrapped in black with a red ribbon.",
-  "tags": "Date nights / Anniversaries",
-  "price": "11,500",
-  "img": "images/ml-128.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-129",
-  "name": "Red Rose Round Bouquet",
-  "desc": "A full round bouquet of red roses and baby's breath, hand-tied.",
-  "tags": "Proposals / Anniversaries",
-  "price": "16,500",
-  "img": "images/ml-129.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-130",
-  "name": "Ruby Rose Arrangement",
-  "desc": "Red roses, alstroemeria and berries gathered into one rich red bouquet.",
-  "tags": "Anniversaries / Gifts",
-  "price": "14,500",
-  "img": "images/ml-130.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-272",
-  "name": "Ruby Rose Black Wrap",
-  "desc": "Fresh red roses with fillers in a black wrap, tied with a red satin bow.",
-  "tags": "Valentine's Day / Anniversaries",
-  "price": "8,950",
-  "img": "images/ml-272.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-273",
-  "name": "Red & Ivory Noir Bouquet",
-  "desc": "Red and ivory roses with pink limonium in a black wrap with a red and white bow.",
-  "tags": "Anniversaries / Date nights",
-  "price": "9,950",
-  "img": "images/ml-273.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-274",
-  "name": "Red & White Rose Wrap",
-  "desc": "Deep red and white roses with fillers in a pink and orange polka-dot wrap with a red ribbon.",
-  "tags": "Anniversaries / Birthdays",
-  "price": "11,500",
-  "img": "images/ml-274.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-275",
-  "name": "Noir Red Rose Bouquet",
-  "desc": "A bold bouquet of red roses and baby's breath in a black wrap with a satin bow.",
-  "tags": "Valentine's Day / Anniversaries",
-  "price": "11,500",
-  "img": "images/ml-275.jpg",
-  "cat": "rose"
- },
- {
-  "code": "ML-131",
-  "name": "Garden Burst",
-  "desc": "A full, round arrangement of mixed roses, chrysanthemums and wildflowers with fresh palm leaves.",
-  "tags": "Birthdays / Gifts",
-  "price": "9,950",
-  "img": "images/ml-131.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-132",
-  "name": "Jewel Basket",
-  "desc": "Red and yellow roses, purple statice and orange blooms in a woven handle basket.",
-  "tags": "Housewarming / Get-well wishes",
-  "price": "11,500",
-  "img": "images/ml-132.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-133",
-  "name": "Pink Gerbera Posy",
-  "desc": "Hot pink gerberas, roses and yellow daisies with palm leaves in a pink and ivory wrap.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "9,500",
-  "img": "images/ml-133.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-134",
-  "name": "Gerbera Garden Bouquet",
-  "desc": "Coral gerberas, red roses and yellow daisies with lilac fillers and fresh greenery.",
-  "tags": "Birthdays / Congratulations",
-  "price": "8,950",
-  "img": "images/ml-134.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-135",
-  "name": "Rose & Wildflower Bouquet",
-  "desc": "Yellow and pink roses with blue thistles and wildflowers in a pink wrap with a satin bow.",
-  "tags": "Birthdays / Gifts",
-  "price": "10,500",
-  "img": "images/ml-135.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-136",
-  "name": "Sunny Chrysanthemum Mix",
-  "desc": "Golden chrysanthemums, red gerberas and goldenrod with broad green leaves.",
-  "tags": "Birthdays / Get-well wishes",
-  "price": "8,500",
-  "img": "images/ml-136.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-137",
-  "name": "Daisy Gerbera Wrap",
-  "desc": "Pink gerberas, daisies and yellow blooms in a white wrap with a green edge.",
-  "tags": "Birthdays / Congratulations",
-  "price": "8,950",
-  "img": "images/ml-137.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-138",
-  "name": "Polka Dot Garden Bouquet",
-  "desc": "Yellow, blue and white wildflowers with roses in a pink and gold polka-dot wrap.",
-  "tags": "Birthdays / Baby showers",
-  "price": "9,950",
-  "img": "images/ml-138.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-139",
-  "name": "Pink Polka Posy",
-  "desc": "Ivory and red roses with yellow chrysanthemums and blue thistles in a polka-dot wrap.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "10,500",
-  "img": "images/ml-139.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-140",
-  "name": "Autumn Chrysanthemum Bouquet",
-  "desc": "Burgundy, golden and white chrysanthemums in a lilac and pink wrap.",
-  "tags": "Birthdays / Festive gifts",
-  "price": "9,950",
-  "img": "images/ml-140.jpg",
-  "cat": "mixed"
  },
  {
   "code": "ML-141",
   "name": "Counter Gerbera Mix",
   "desc": "A cheerful mix of pink gerberas, white daisies, calla lilies and deep purple blooms.",
   "tags": "Birthdays / Congratulations",
-  "price": "8,500",
+  "price": "1,000",
   "img": "images/ml-141.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-142",
-  "name": "Violet Aster Bouquet",
-  "desc": "Rich violet asters and pink stock with baby's breath in a clear wrap.",
-  "tags": "Birthdays / Graduation",
-  "price": "5,950",
-  "img": "images/ml-142.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-143",
-  "name": "Gerbera Fiesta",
-  "desc": "Pink and white gerberas with orange alstroemeria and yellow lilies.",
-  "tags": "Birthdays / Congratulations",
-  "price": "9,500",
-  "img": "images/ml-143.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-144",
-  "name": "Lily & Gerbera Bouquet",
-  "desc": "Alstroemeria, gerberas, white daffodil-style blooms and ferns with a deep purple bow.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "9,950",
-  "img": "images/ml-144.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-145",
-  "name": "Wildflower Rose Hand Bouquet",
-  "desc": "Red roses, yellow chrysanthemums and white blooms in a clear wrap with a jute tie.",
-  "tags": "Birthdays / Gifts",
-  "price": "8,950",
-  "img": "images/ml-145.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-146",
-  "name": "Rainbow Ribbon Bouquet",
-  "desc": "Alstroemeria, gerberas, daisies and chrysanthemums in a clear wrap with a purple ribbon.",
-  "tags": "Birthdays / Congratulations",
-  "price": "8,950",
-  "img": "images/ml-146.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-147",
-  "name": "Carnival Gerbera Bouquet",
-  "desc": "A red gerbera centre surrounded by yellow, purple and white blooms in clear cellophane.",
-  "tags": "Birthdays / Graduation",
-  "price": "9,500",
-  "img": "images/ml-147.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-148",
-  "name": "Yellow Calla Bouquet",
-  "desc": "Yellow chrysanthemums, white callas and green blooms with a pink satin bow.",
-  "tags": "Birthdays / Get-well wishes",
-  "price": "8,950",
-  "img": "images/ml-148.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-149",
-  "name": "Daisy Chrysanthemum Posy",
-  "desc": "Purple and white daisies with yellow chrysanthemums in a round, hand-tied style.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "7,450",
-  "img": "images/ml-149.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-150",
-  "name": "Burgundy Alstroemeria Bouquet",
-  "desc": "Deep red gerberas and pink alstroemeria in a bright pink wrap with ribbon.",
-  "tags": "Birthdays / Anniversaries",
-  "price": "9,950",
-  "img": "images/ml-150.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-151",
-  "name": "Pink Wrap Berry Bouquet",
-  "desc": "Burgundy gerberas, pink alstroemeria and white blooms in a soft pink wrap.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "8,500",
-  "img": "images/ml-151.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-152",
-  "name": "Sunshine Basket",
-  "desc": "Bright yellow chrysanthemums and green fillers arranged in a woven basket with a jute bow.",
-  "tags": "Get-well wishes / Housewarming",
-  "price": "10,500",
-  "img": "images/ml-152.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-153",
-  "name": "Hot Pink Gerbera Bouquet",
-  "desc": "Magenta and red gerberas, orange blooms and green hydrangea with a red satin bow.",
-  "tags": "Birthdays / Congratulations",
-  "price": "12,500",
-  "img": "images/ml-153.jpg",
-  "cat": "mixed"
+  "cat": "rose"
  },
  {
   "code": "ML-154",
   "name": "Violet & Lime Bouquet",
   "desc": "Red gerberas, white daisies, green hydrangea and purple statice in a burgundy and white wrap.",
   "tags": "Birthdays / Gifts",
-  "price": "11,500",
+  "price": "1,500",
   "img": "images/ml-154.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-155",
-  "name": "Sunflower Gerbera Bouquet",
-  "desc": "Yellow gerberas, orange blooms, red roses and golden daisies in a bright, generous bouquet.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "12,500",
-  "img": "images/ml-155.jpg",
   "cat": "mixed"
  },
  {
@@ -1255,7 +1021,7 @@ const BOUQUETS = [
   "name": "Sunny Gerbera Bouquet",
   "desc": "A large yellow gerbera at the centre of white daisies, blue thistles and red blooms in a burgundy wrap.",
   "tags": "Birthdays / Congratulations",
-  "price": "11,500",
+  "price": "1,500",
   "img": "images/ml-156.jpg",
   "cat": "mixed"
  },
@@ -1264,8 +1030,53 @@ const BOUQUETS = [
   "name": "Pink Foil Bouquet",
   "desc": "Pink and white gerberas with purple statice in a bright pink patterned wrap.",
   "tags": "Birthdays / Valentine's Day",
-  "price": "8,950",
+  "price": "1,500",
   "img": "images/ml-157.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-134",
+  "name": "Gerbera Garden Bouquet",
+  "desc": "Coral gerberas, red roses and yellow daisies with lilac fillers and fresh greenery.",
+  "tags": "Birthdays / Congratulations",
+  "price": "2,000",
+  "img": "images/ml-134.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-136",
+  "name": "Sunny Chrysanthemum Mix",
+  "desc": "Golden chrysanthemums, red gerberas and goldenrod with broad green leaves.",
+  "tags": "Birthdays / Get-well wishes",
+  "price": "2,000",
+  "img": "images/ml-136.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-143",
+  "name": "Gerbera Fiesta",
+  "desc": "Pink and white gerberas with orange alstroemeria and yellow lilies.",
+  "tags": "Birthdays / Congratulations",
+  "price": "2,000",
+  "img": "images/ml-143.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-150",
+  "name": "Burgundy Alstroemeria Bouquet",
+  "desc": "Deep red gerberas and pink alstroemeria in a bright pink wrap with ribbon.",
+  "tags": "Birthdays / Anniversaries",
+  "price": "2,000",
+  "img": "images/ml-150.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-155",
+  "name": "Sunflower Gerbera Bouquet",
+  "desc": "Yellow gerberas, orange blooms, red roses and golden daisies in a bright, generous bouquet.",
+  "tags": "Birthdays / Thank-you gifts",
+  "price": "2,000",
+  "img": "images/ml-155.jpg",
   "cat": "mixed"
  },
  {
@@ -1273,26 +1084,8 @@ const BOUQUETS = [
   "name": "Red Wrap Statice Bouquet",
   "desc": "Red gerberas and purple statice in a red and white wrap tied with jute.",
   "tags": "Birthdays / Gifts",
-  "price": "8,500",
+  "price": "2,000",
   "img": "images/ml-158.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-159",
-  "name": "Jute Wild Bouquet",
-  "desc": "Red roses, pink gerberas and wildflowers in a cream wrap tied with natural jute.",
-  "tags": "Birthdays / Rustic themes",
-  "price": "9,500",
-  "img": "images/ml-159.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-160",
-  "name": "Navy Wrap Garden Bouquet",
-  "desc": "Orange gerberas, blue thistles and pink blooms in a navy and white wrap with jute.",
-  "tags": "Birthdays / Congratulations",
-  "price": "9,500",
-  "img": "images/ml-160.jpg",
   "cat": "mixed"
  },
  {
@@ -1300,17 +1093,8 @@ const BOUQUETS = [
   "name": "Golden Alstroemeria Bouquet",
   "desc": "Yellow and orange alstroemeria with white roses and greenery in kraft paper tied with lace.",
   "tags": "Birthdays / Thank-you gifts",
-  "price": "9,950",
+  "price": "2,000",
   "img": "images/ml-161.jpg",
-  "cat": "mixed"
- },
- {
-  "code": "ML-281",
-  "name": "Purple Ribbon Wildflower Bouquet",
-  "desc": "Pink and yellow chrysanthemums, daisies and lilies with a purple ribbon.",
-  "tags": "Birthdays / Congratulations",
-  "price": "8,950",
-  "img": "images/ml-281.jpg",
   "cat": "mixed"
  },
  {
@@ -1318,8 +1102,44 @@ const BOUQUETS = [
   "name": "Yellow Calla Posy",
   "desc": "Yellow chrysanthemums, white callas and cream blooms with a pink satin bow.",
   "tags": "Birthdays / Get-well wishes",
-  "price": "8,950",
+  "price": "2,000",
   "img": "images/ml-282.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-137",
+  "name": "Daisy Gerbera Wrap",
+  "desc": "Pink gerberas, daisies and yellow blooms in a white wrap with a green edge.",
+  "tags": "Birthdays / Congratulations",
+  "price": "2,500",
+  "img": "images/ml-137.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-138",
+  "name": "Polka Dot Garden Bouquet",
+  "desc": "Yellow, blue and white wildflowers with roses in a pink and gold polka-dot wrap.",
+  "tags": "Birthdays / Baby showers",
+  "price": "2,500",
+  "img": "images/ml-138.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-147",
+  "name": "Carnival Gerbera Bouquet",
+  "desc": "A red gerbera centre surrounded by yellow, purple and white blooms in clear cellophane.",
+  "tags": "Birthdays / Graduation",
+  "price": "2,500",
+  "img": "images/ml-147.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-153",
+  "name": "Hot Pink Gerbera Bouquet",
+  "desc": "Magenta and red gerberas, orange blooms and green hydrangea with a red satin bow.",
+  "tags": "Birthdays / Congratulations",
+  "price": "2,500",
+  "img": "images/ml-153.jpg",
   "cat": "mixed"
  },
  {
@@ -1327,206 +1147,161 @@ const BOUQUETS = [
   "name": "Orange Lily Gerbera Bouquet",
   "desc": "Orange lilies, gerberas, red roses and yellow blooms in a pink wrap with a satin bow.",
   "tags": "Birthdays / Congratulations",
-  "price": "9,500",
+  "price": "2,500",
   "img": "images/ml-283.jpg",
   "cat": "mixed"
  },
  {
-  "code": "ML-284",
-  "name": "Jute Garden Bouquet",
-  "desc": "Red gerberas, pink blooms and tropical greenery in a cream wrap tied with jute.",
+  "code": "ML-146",
+  "name": "Rainbow Ribbon Bouquet",
+  "desc": "Alstroemeria, gerberas, daisies and chrysanthemums in a clear wrap with a purple ribbon.",
+  "tags": "Birthdays / Congratulations",
+  "price": "3,000",
+  "img": "images/ml-146.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-140",
+  "name": "Autumn Chrysanthemum Bouquet",
+  "desc": "Burgundy, golden and white chrysanthemums in a lilac and pink wrap.",
+  "tags": "Birthdays / Festive gifts",
+  "price": "3,500",
+  "img": "images/ml-140.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-145",
+  "name": "Wildflower Rose Hand Bouquet",
+  "desc": "Red roses, yellow chrysanthemums and white blooms in a clear wrap with a jute tie.",
+  "tags": "Birthdays / Gifts",
+  "price": "3,500",
+  "img": "images/ml-145.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-160",
+  "name": "Navy Wrap Garden Bouquet",
+  "desc": "Orange gerberas, blue thistles and pink blooms in a navy and white wrap with jute.",
+  "tags": "Birthdays / Congratulations",
+  "price": "3,500",
+  "img": "images/ml-160.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-133",
+  "name": "Pink Gerbera Posy",
+  "desc": "Hot pink gerberas, roses and yellow daisies with palm leaves in a pink and ivory wrap.",
+  "tags": "Birthdays / Thank-you gifts",
+  "price": "4,000",
+  "img": "images/ml-133.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-139",
+  "name": "Pink Polka Posy",
+  "desc": "Ivory and red roses with yellow chrysanthemums and blue thistles in a polka-dot wrap.",
+  "tags": "Birthdays / Thank-you gifts",
+  "price": "4,000",
+  "img": "images/ml-139.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-149",
+  "name": "Daisy Chrysanthemum Posy",
+  "desc": "Purple and white daisies with yellow chrysanthemums in a round, hand-tied style.",
+  "tags": "Birthdays / Thank-you gifts",
+  "price": "4,000",
+  "img": "images/ml-149.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-148",
+  "name": "Yellow Calla Bouquet",
+  "desc": "Yellow chrysanthemums, white callas and green blooms with a pink satin bow.",
+  "tags": "Birthdays / Get-well wishes",
+  "price": "4,500",
+  "img": "images/ml-148.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-135",
+  "name": "Rose & Wildflower Bouquet",
+  "desc": "Yellow and pink roses with blue thistles and wildflowers in a pink wrap with a satin bow.",
+  "tags": "Birthdays / Gifts",
+  "price": "5,000",
+  "img": "images/ml-135.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-281",
+  "name": "Purple Ribbon Wildflower Bouquet (Dry mix)",
+  "desc": "Pink and yellow chrysanthemums, daisies and lilies with a purple ribbon.",
+  "tags": "Birthdays / Congratulations",
+  "price": "5,000",
+  "img": "images/ml-281.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-152",
+  "name": "Sunshine Basket",
+  "desc": "Bright yellow chrysanthemums and green fillers arranged in a woven basket with a jute bow.",
+  "tags": "Get-well wishes / Housewarming",
+  "price": "6,000",
+  "img": "images/ml-152.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-131",
+  "name": "Garden Burst",
+  "desc": "A full, round arrangement of mixed roses, chrysanthemums and wildflowers with fresh palm leaves. (10 roses)",
+  "tags": "Birthdays / Gifts",
+  "price": "7,000",
+  "img": "images/ml-131.jpg",
+  "cat": "mixed"
+ },
+ {
+  "code": "ML-159",
+  "name": "Jute Wild Bouquet",
+  "desc": "Red roses, pink gerberas and wildflowers in a cream wrap tied with natural jute. (2 lilies, 5 roses)",
   "tags": "Birthdays / Rustic themes",
-  "price": "9,500",
-  "img": "images/ml-284.jpg",
+  "price": "7,000",
+  "img": "images/ml-159.jpg",
   "cat": "mixed"
  },
  {
   "code": "ML-285",
-  "name": "Rainbow Wrap Bouquet",
+  "name": "Rainbow Wrap Bouquet (Dry mix)",
   "desc": "Pink gerberas, roses and dried gold stems in layered purple, blue and pink wraps.",
   "tags": "Birthdays / Gifts",
-  "price": "14,500",
+  "price": "8,000",
   "img": "images/ml-285.jpg",
   "cat": "mixed"
  },
  {
-  "code": "ML-162",
-  "name": "Pastel Rose Cloud",
-  "desc": "Pink and cream roses with lilac and yellow wildflowers in a clear wrap with a pink bow.",
-  "tags": "Bridesmaids / Birthdays",
-  "price": "9,500",
-  "img": "images/ml-162.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-163",
-  "name": "Gold Edge Pastel Bouquet",
-  "desc": "Ivory roses, yellow daisies and pastel blooms in a white and gold-edged wrap with a purple ribbon.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "9,950",
-  "img": "images/ml-163.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-164",
-  "name": "Ivory Rose & Lilac Bouquet",
-  "desc": "Ivory roses with lilac lisianthus and white blooms in a blush wrap.",
-  "tags": "Birthdays / Weddings",
-  "price": "10,500",
-  "img": "images/ml-164.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-165",
-  "name": "Peach Blush Bouquet",
-  "desc": "Peach and pink roses with white fillers and lilac blooms in a clear wrap with a pink bow.",
-  "tags": "Birthdays / Mother's Day",
-  "price": "9,500",
-  "img": "images/ml-165.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-166",
-  "name": "Soft Peach Bouquet",
-  "desc": "Peach and coral roses, alstroemeria and fillers in a blush wrap.",
-  "tags": "Birthdays / Anniversaries",
-  "price": "9,500",
-  "img": "images/ml-166.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-167",
-  "name": "Alstroemeria Posy",
-  "desc": "A white gerbera at the centre of pink alstroemeria, daisies and baby's breath.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "8,950",
-  "img": "images/ml-167.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-168",
-  "name": "Blue Gerbera Bouquet",
-  "desc": "Blue-tinted gerberas and carnations with alstroemeria and white blooms in an ivory wrap.",
-  "tags": "Baby showers / Birthdays",
-  "price": "10,500",
-  "img": "images/ml-168.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-169",
-  "name": "Calla & Rose Bouquet",
-  "desc": "White calla lilies, blush roses and red gerberas in a teal and lilac wrap.",
-  "tags": "Birthdays / Anniversaries",
-  "price": "12,500",
-  "img": "images/ml-169.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-170",
-  "name": "Purple Aster Hand Bouquet",
-  "desc": "Violet asters with fresh fern, wrapped in clear cellophane with a purple ribbon.",
-  "tags": "Birthdays / Graduation",
-  "price": "5,950",
-  "img": "images/ml-170.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-171",
-  "name": "Violet Fern Bouquet",
-  "desc": "Purple asters and soft fern in clear wrap topped with a satin ribbon bow.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "4,950",
-  "img": "images/ml-171.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-172",
-  "name": "Blue Ribbon Pastel Bouquet",
-  "desc": "Ivory roses, peach gerberas and blue-tinted blooms in a sheer blue wrap with a navy bow.",
-  "tags": "Birthdays / Baby showers",
-  "price": "11,500",
-  "img": "images/ml-172.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-173",
-  "name": "Pastel Gerbera Bouquet",
-  "desc": "Orange gerberas, ivory roses, pink carnations and blue accents in a blue and white wrap.",
-  "tags": "Birthdays / Congratulations",
-  "price": "12,500",
-  "img": "images/ml-173.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-174",
-  "name": "Calla & Gerbera Bouquet",
-  "desc": "Blush roses, red gerberas, white calla lilies and lilac statice in a lavender wrap.",
-  "tags": "Birthdays / Anniversaries",
-  "price": "12,500",
-  "img": "images/ml-174.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-175",
-  "name": "Lilac Garden Bouquet",
-  "desc": "Pink and purple chrysanthemums with white fillers and wildflowers in a soft grey wrap.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "8,500",
-  "img": "images/ml-175.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-176",
-  "name": "Dried & Ivory Rose Bouquet",
-  "desc": "Ivory roses with dried grasses, pampas and soft blue hydrangea for a warm, natural look.",
-  "tags": "Rustic weddings / Home décor",
-  "price": "12,500",
-  "img": "images/ml-176.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-177",
-  "name": "Blue Wrap Dried Rose Bouquet",
-  "desc": "Ivory roses with dried grasses and wheat, wrapped in a textured blue paper.",
-  "tags": "Rustic themes / Gifts",
-  "price": "11,500",
-  "img": "images/ml-177.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-178",
-  "name": "Ivory & Wine Rose Bouquet",
-  "desc": "Ivory and wine roses with white blooms and greenery in a striped pink and grey wrap.",
-  "tags": "Birthdays / Anniversaries",
-  "price": "10,500",
-  "img": "images/ml-178.jpg",
-  "cat": "pastel"
+  "code": "ML-132",
+  "name": "Roses Basket",
+  "desc": "Red and yellow roses, purple statice and orange blooms in a woven handle basket.",
+  "tags": "Housewarming / Get-well wishes",
+  "price": "15,000",
+  "img": "images/ml-132.jpg",
+  "cat": "mixed"
  },
  {
   "code": "ML-179",
   "name": "Cream Wrap Dried Bouquet",
   "desc": "A small red rose with dried grasses in a cream wrap tied with jute and a satin bow.",
   "tags": "Gifts / Rustic themes",
-  "price": "5,950",
+  "price": "800",
   "img": "images/ml-179.jpg",
-  "cat": "pastel"
+  "cat": "mixed"
  },
  {
-  "code": "ML-180",
-  "name": "Pink Alstroemeria Wrap",
-  "desc": "Pink alstroemeria, daisies and white blooms in a grey striped wrap with a purple bow.",
+  "code": "ML-167",
+  "name": "Alstroemeria Posy",
+  "desc": "A white gerbera at the centre of pink alstroemeria, daisies and baby's breath.",
   "tags": "Birthdays / Thank-you gifts",
-  "price": "8,950",
-  "img": "images/ml-180.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-181",
-  "name": "White Calla Bouquet",
-  "desc": "White calla lilies and ivory roses with dried grasses and palm in clear wrap with a white ribbon.",
-  "tags": "Weddings / Sympathy",
-  "price": "12,500",
-  "img": "images/ml-181.jpg",
+  "price": "1,500",
+  "img": "images/ml-167.jpg",
   "cat": "pastel"
  },
  {
@@ -1534,17 +1309,8 @@ const BOUQUETS = [
   "name": "Forest Green Wrap Bouquet",
   "desc": "White blooms, red roses and green foliage in a dark green wrap tied with jute and lace.",
   "tags": "Birthdays / Anniversaries",
-  "price": "9,950",
+  "price": "1,500",
   "img": "images/ml-182.jpg",
-  "cat": "pastel"
- },
- {
-  "code": "ML-276",
-  "name": "Gold Edge Garden Bouquet",
-  "desc": "Ivory roses, yellow daisies and pastel blooms in a white and gold-edged wrap with a purple bow.",
-  "tags": "Birthdays / Thank-you gifts",
-  "price": "9,950",
-  "img": "images/ml-276.jpg",
   "cat": "pastel"
  },
  {
@@ -1552,8 +1318,80 @@ const BOUQUETS = [
   "name": "Pink Alstroemeria Bouquet",
   "desc": "Pink alstroemeria, white daisies and baby's breath with a hint of yellow.",
   "tags": "Birthdays / Thank-you gifts",
-  "price": "8,950",
+  "price": "1,500",
   "img": "images/ml-277.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-163",
+  "name": "Gold Edge Pastel Bouquet",
+  "desc": "Ivory roses, yellow daisies and pastel blooms in a white and gold-edged wrap with a purple ribbon.",
+  "tags": "Birthdays / Thank-you gifts",
+  "price": "2,500",
+  "img": "images/ml-163.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-162",
+  "name": "Pastel Rose Cloud",
+  "desc": "Pink and cream roses with lilac and yellow wildflowers in a clear wrap with a pink bow.",
+  "tags": "Bridesmaids / Birthdays",
+  "price": "3,500",
+  "img": "images/ml-162.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-168",
+  "name": "Blue Gerbera Bouquet",
+  "desc": "Blue-tinted gerberas and carnations with alstroemeria and white blooms in an ivory wrap.",
+  "tags": "Baby showers / Birthdays",
+  "price": "3,500",
+  "img": "images/ml-168.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-164",
+  "name": "Ivory Rose & Lilac Bouquet",
+  "desc": "Ivory roses with lilac lisianthus and white blooms in a blush wrap.",
+  "tags": "Birthdays / Weddings",
+  "price": "4,000",
+  "img": "images/ml-164.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-169",
+  "name": "Calla & Rose Bouquet",
+  "desc": "White calla lilies, blush roses and red gerberas in a teal and lilac wrap. (5 lilies, 5 roses)",
+  "tags": "Birthdays / Anniversaries",
+  "price": "4,000",
+  "img": "images/ml-169.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-175",
+  "name": "Lilac Garden Bouquet",
+  "desc": "Pink and purple chrysanthemums with white fillers and wildflowers in a soft grey wrap.",
+  "tags": "Birthdays / Thank-you gifts",
+  "price": "4,000",
+  "img": "images/ml-175.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-181",
+  "name": "White Calla Bouquet",
+  "desc": "White calla lilies and ivory roses with dried grasses and palm in clear wrap with a white ribbon.",
+  "tags": "Weddings / Sympathy",
+  "price": "4,000",
+  "img": "images/ml-181.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-276",
+  "name": "Gold Edge Garden Bouquet",
+  "desc": "Ivory roses, yellow daisies and pastel blooms in a white and gold-edged wrap with a purple bow.",
+  "tags": "Birthdays / Thank-you gifts",
+  "price": "4,000",
+  "img": "images/ml-276.jpg",
   "cat": "pastel"
  },
  {
@@ -1561,70 +1399,70 @@ const BOUQUETS = [
   "name": "Pastel Gerbera Garden Bouquet",
   "desc": "Orange and peach gerberas, ivory roses and blue-tinted blooms in a full, generous bouquet.",
   "tags": "Birthdays / Congratulations",
-  "price": "12,500",
+  "price": "4,000",
   "img": "images/ml-278.jpg",
   "cat": "pastel"
  },
  {
-  "code": "ML-279",
-  "name": "Blue Wrap Rose Bouquet",
-  "desc": "Ivory roses and dried grasses in a textured blue wrap.",
-  "tags": "Rustic themes / Gifts",
-  "price": "11,500",
-  "img": "images/ml-279.jpg",
+  "code": "ML-165",
+  "name": "Peach Blush Bouquet",
+  "desc": "Peach and pink roses with white fillers and lilac blooms in a clear wrap with a pink bow.",
+  "tags": "Birthdays / Mother's Day",
+  "price": "5,000",
+  "img": "images/ml-165.jpg",
   "cat": "pastel"
  },
  {
-  "code": "ML-280",
-  "name": "Striped Wrap Rose Bouquet",
-  "desc": "Red and white roses with greenery in a grey striped wrap with a red and white bow.",
+  "code": "ML-170",
+  "name": "Purple Aster Hand Bouquet",
+  "desc": "Violet asters with fresh fern, wrapped in clear cellophane with a purple ribbon.",
+  "tags": "Birthdays / Graduation",
+  "price": "5,000",
+  "img": "images/ml-170.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-172",
+  "name": "Blue Ribbon Pastel Bouquet",
+  "desc": "Ivory roses, peach gerberas and blue-tinted blooms in a sheer blue wrap with a navy bow.",
+  "tags": "Birthdays / Baby showers",
+  "price": "5,000",
+  "img": "images/ml-172.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-176",
+  "name": "Dried & Ivory Rose Bouquet",
+  "desc": "Ivory roses with dried grasses, pampas and soft blue hydrangea for a warm, natural look.",
+  "tags": "Rustic weddings / Home décor",
+  "price": "6,000",
+  "img": "images/ml-176.jpg",
+  "cat": "pastel"
+ },
+ {
+  "code": "ML-178",
+  "name": "Ivory & Wine Rose Bouquet",
+  "desc": "Ivory and wine roses with white blooms and greenery in a striped pink and grey wrap.",
   "tags": "Birthdays / Anniversaries",
-  "price": "10,500",
-  "img": "images/ml-280.jpg",
+  "price": "10,000",
+  "img": "images/ml-178.jpg",
   "cat": "pastel"
- },
- {
-  "code": "ML-183",
-  "name": "Single White Rose",
-  "desc": "One large white rose with ruscus leaves and greenery in a frosted pink wrap and satin bow.",
-  "tags": "Thank-you notes / Small gifts",
-  "price": "1,950",
-  "img": "images/ml-183.jpg",
-  "cat": "mini"
- },
- {
-  "code": "ML-184",
-  "name": "Red Rose Mini Bouquet",
-  "desc": "A red rose with a bloom and fresh leaves wrapped in clear cellophane.",
-  "tags": "Small gifts / Valentine's Day",
-  "price": "2,950",
-  "img": "images/ml-184.jpg",
-  "cat": "mini"
- },
- {
-  "code": "ML-185",
-  "name": "Single Red Rose Bouquet",
-  "desc": "A single red rose with gypsophila and yellow foliage wrapped in clear cellophane.",
-  "tags": "Valentine's Day / Thank-you gifts",
-  "price": "3,450",
-  "img": "images/ml-185.jpg",
-  "cat": "mini"
  },
  {
   "code": "ML-186",
   "name": "Yellow Chrysanthemum Bouquet",
   "desc": "Three golden chrysanthemums with soft fillers, tied with a yellow ribbon.",
   "tags": "Birthdays / Thank-you gifts",
-  "price": "3,950",
+  "price": "350",
   "img": "images/ml-186.jpg",
-  "cat": "mini"
+  "cat": "pastel"
  },
  {
   "code": "ML-187",
   "name": "Golden Lily Stem Bouquet",
   "desc": "Yellow lilies with fresh green foliage in clear wrap, tied with a yellow bow.",
   "tags": "Small gifts / Get-well wishes",
-  "price": "2,950",
+  "price": "400",
   "img": "images/ml-187.jpg",
   "cat": "mini"
  },
@@ -1633,8 +1471,26 @@ const BOUQUETS = [
   "name": "Carnation & Fern Bouquet",
   "desc": "Lilac carnations with soft green fern in clear wrap with a pink bow.",
   "tags": "Small gifts / Thank-you notes",
-  "price": "3,450",
+  "price": "400",
   "img": "images/ml-188.jpg",
+  "cat": "mini"
+ },
+ {
+  "code": "ML-183",
+  "name": "Single White Rose",
+  "desc": "One large white rose with ruscus leaves and greenery in a frosted pink wrap and satin bow.",
+  "tags": "Thank-you notes / Small gifts",
+  "price": "500",
+  "img": "images/ml-183.jpg",
+  "cat": "mini"
+ },
+ {
+  "code": "ML-184",
+  "name": "Red Rose Mini Bouquet",
+  "desc": "A red rose with a bloom and fresh leaves wrapped in clear cellophane.",
+  "tags": "Small gifts / Valentine's Day",
+  "price": "500",
+  "img": "images/ml-184.jpg",
   "cat": "mini"
  },
  {
@@ -1642,7 +1498,7 @@ const BOUQUETS = [
   "name": "Ivory Single Rose Bouquet",
   "desc": "One large ivory rose with leaves and fillers in a frosted pink wrap with a white bow.",
   "tags": "Thank-you notes / Small gifts",
-  "price": "1,950",
+  "price": "600",
   "img": "images/ml-286.jpg",
   "cat": "mini"
  },
@@ -1651,7 +1507,7 @@ const BOUQUETS = [
   "name": "Ruby Car Flowers",
   "desc": "Red gerberas and alstroemeria with purple asters and lush greenery, finished with flowing red tulle.",
   "tags": "Wedding cars / Homecoming cars",
-  "price": "7,000",
+  "price": "7,500",
   "img": "images/ml-101.jpg",
   "cat": "mini"
  },
@@ -1660,7 +1516,7 @@ const BOUQUETS = [
   "name": "Ivory Daisy Car Flowers",
   "desc": "White chrysanthemums, daisies, pink alstroemeria and green hydrangea with a soft white tulle bow.",
   "tags": "Wedding cars / Bridal cars",
-  "price": "6,500",
+  "price": "7,000",
   "img": "images/ml-102.jpg",
   "cat": "car"
  },
@@ -1669,7 +1525,7 @@ const BOUQUETS = [
   "name": "Festive Car Flowers",
   "desc": "Red gerberas, purple asters and colourful alstroemeria with bright red ribbons.",
   "tags": "Wedding cars / Homecoming cars",
-  "price": "15,500",
+  "price": "5,000",
   "img": "images/ml-103.jpg",
   "cat": "car"
  },
@@ -1678,7 +1534,7 @@ const BOUQUETS = [
   "name": "Wildflower Car Flowers",
   "desc": "A cheerful bonnet arrangement of gerberas, alstroemeria and wildflowers with flowing red tulle.",
   "tags": "Wedding cars / Homecoming cars",
-  "price": "6,500",
+  "price": "7,000",
   "img": "images/ml-104.jpg",
   "cat": "car"
  },
@@ -1687,7 +1543,7 @@ const BOUQUETS = [
   "name": "Rainbow Bloom Car Flowers",
   "desc": "A bright bonnet arrangement of gerberas, alstroemeria and mixed blooms with flowing violet tulle.",
   "tags": "Wedding cars / Homecoming cars",
-  "price": "7,500",
+  "price": "7,000",
   "img": "images/ml-105.jpg",
   "cat": "car"
  },
@@ -1696,7 +1552,7 @@ const BOUQUETS = [
   "name": "Pastel Garland Car Flowers",
   "desc": "A long garland of white, lilac and pink chrysanthemums and gerberas across the bonnet.",
   "tags": "Wedding cars / Bridal cars",
-  "price": "15,000",
+  "price": "12,000",
   "img": "images/ml-106.jpg",
   "cat": "car"
  },
@@ -1705,7 +1561,7 @@ const BOUQUETS = [
   "name": "Golden Wild Car Flowers",
   "desc": "Cream daisies and alstroemeria with golden dried foliage and gold ribbons.",
   "tags": "Wedding cars / Evening weddings",
-  "price": "7,500",
+  "price": "6,500",
   "img": "images/ml-107.jpg",
   "cat": "car"
  },
@@ -1723,7 +1579,7 @@ const BOUQUETS = [
   "name": "Ivory Spray Car Flowers",
   "desc": "A soft spray of white blooms and greenery with a white tulle bow on the grille.",
   "tags": "Wedding cars / Bridal cars",
-  "price": "6,500",
+  "price": "7,000",
   "img": "images/ml-190.jpg",
   "cat": "car"
  },
@@ -1759,7 +1615,7 @@ const BOUQUETS = [
   "name": "Pastel Bloom Car Flowers",
   "desc": "Soft pink, cream and peach blooms with white tulle swags.",
   "tags": "Wedding cars / Evening weddings",
-  "price": "7,500",
+  "price": "7,000",
   "img": "images/ml-194.jpg",
   "cat": "car"
  },
@@ -1801,10 +1657,10 @@ const BOUQUETS = [
  },
  {
   "code": "ML-199",
-  "name": "Vintage Garland Car Flowers",
+  "name": "Vintage Garland Car Flowers with Baby’s Breath",
   "desc": "A long garland of white flowers and greenery along the bonnet of a classic car.",
   "tags": "Vintage cars / Bridal cars",
-  "price": "12,500",
+  "price": "15,000",
   "img": "images/ml-199.jpg",
   "cat": "car"
  },
@@ -1813,7 +1669,7 @@ const BOUQUETS = [
   "name": "Grand Rainbow Car Flowers",
   "desc": "A large round bouquet of mixed colourful blooms with red tulle ribbons.",
   "tags": "Wedding cars / Statement cars",
-  "price": "15,500",
+  "price": "6,500",
   "img": "images/ml-200.jpg",
   "cat": "car"
  },
@@ -1863,15 +1719,6 @@ const BOUQUETS = [
   "cat": "car"
  },
  {
-  "code": "ML-206",
-  "name": "Wildflower Bonnet Bouquet",
-  "desc": "Bright gerberas and wildflowers arranged in a cheerful side-bonnet bouquet.",
-  "tags": "Wedding cars / Homecoming cars",
-  "price": "7,000",
-  "img": "images/ml-206.jpg",
-  "cat": "car"
- },
- {
   "code": "ML-207",
   "name": "Red Rose Garland Car Flowers",
   "desc": "A long garland of red and pink roses with greenery across the bonnet.",
@@ -1887,15 +1734,6 @@ const BOUQUETS = [
   "tags": "Wedding cars / Bridal cars",
   "price": "7,000",
   "img": "images/ml-208.jpg",
-  "cat": "car"
- },
- {
-  "code": "ML-209",
-  "name": "Fire Bloom Car Flowers",
-  "desc": "Red and orange blooms with matching orange ribbons.",
-  "tags": "Wedding cars / Homecoming cars",
-  "price": "6,500",
-  "img": "images/ml-209.jpg",
   "cat": "car"
  },
  {
@@ -1930,7 +1768,7 @@ const BOUQUETS = [
   "name": "Lilac Tulle Car Flowers",
   "desc": "Mixed blooms with lilac tulle and small flowers scattered across the bonnet.",
   "tags": "Wedding cars / Evening weddings",
-  "price": "15,000",
+  "price": "10,000",
   "img": "images/ml-213.jpg",
   "cat": "car"
  },
@@ -1939,7 +1777,7 @@ const BOUQUETS = [
   "name": "Twin Bouquet Car Flowers",
   "desc": "A bonnet bouquet with a matching door-mirror bouquet in cream and yellow blooms.",
   "tags": "Wedding cars / Bridal cars",
-  "price": "15,000",
+  "price": "10,000",
   "img": "images/ml-214.jpg",
   "cat": "car"
  },
@@ -1957,7 +1795,7 @@ const BOUQUETS = [
   "name": "Autumn Wreath Car Flowers",
   "desc": "An orange and green alstroemeria wreath with crossed red tulle.",
   "tags": "Wedding cars / Homecoming cars",
-  "price": "7,500",
+  "price": "7,000",
   "img": "images/ml-216.jpg",
   "cat": "car"
  },
@@ -1966,7 +1804,7 @@ const BOUQUETS = [
   "name": "Ivory Heart Car Flowers",
   "desc": "A full heart of white chrysanthemums with a long white tulle ribbon.",
   "tags": "Wedding cars / Bridal cars",
-  "price": "15,000",
+  "price": "25,000",
   "img": "images/ml-217.jpg",
   "cat": "car"
  },
@@ -1977,15 +1815,6 @@ const BOUQUETS = [
   "tags": "Wedding cars / Luxury cars",
   "price": "7,500",
   "img": "images/ml-218.jpg",
-  "cat": "car"
- },
- {
-  "code": "ML-287",
-  "name": "Door Mirror Bow Decoration",
-  "desc": "White tulle bows with a small flower accent for car door handles and mirrors.",
-  "tags": "Wedding cars / Add-on",
-  "price": "3,000 per pair",
-  "img": "images/ml-287.jpg",
   "cat": "car"
  },
  {
@@ -2004,15 +1833,6 @@ const BOUQUETS = [
   "tags": "Wedding cars / Themed weddings",
   "price": "7,500",
   "img": "images/ml-289.jpg",
-  "cat": "car"
- },
- {
-  "code": "ML-290",
-  "name": "Red Rose Garland Car Flowers II",
-  "desc": "A garland of red and pink roses with greenery across the bonnet of an SUV.",
-  "tags": "Wedding cars / SUVs",
-  "price": "15,000",
-  "img": "images/ml-290.jpg",
   "cat": "car"
  },
  {
@@ -2043,48 +1863,12 @@ const BOUQUETS = [
   "cat": "car"
  },
  {
-  "code": "ML-294",
-  "name": "Lilac Tulle Car Flowers II",
-  "desc": "Yellow and white gerberas with lilac tulle and small flowers scattered across the bonnet.",
-  "tags": "Wedding cars / Evening weddings",
-  "price": "15,000",
-  "img": "images/ml-294.jpg",
-  "cat": "car"
- },
- {
-  "code": "ML-295",
-  "name": "Sunshine Bonnet Bouquet",
-  "desc": "Yellow gerberas, orange alstroemeria and white blooms in a full bonnet bouquet.",
-  "tags": "Wedding cars / Homecoming cars",
-  "price": "7,500",
-  "img": "images/ml-295.jpg",
-  "cat": "car"
- },
- {
-  "code": "ML-296",
-  "name": "Red Wreath Car Flowers",
-  "desc": "A wreath of red and green blooms with fine red ribbons.",
-  "tags": "Wedding cars / Homecoming cars",
-  "price": "7,500",
-  "img": "images/ml-296.jpg",
-  "cat": "car"
- },
- {
   "code": "ML-297",
   "name": "Cream Cascade Car Flowers",
   "desc": "A cascade of cream alstroemeria and daisies with white ribbons.",
   "tags": "Wedding cars / Bridal cars",
-  "price": "7,500",
+  "price": "6,000",
   "img": "images/ml-297.jpg",
-  "cat": "car"
- },
- {
-  "code": "ML-298",
-  "name": "Ivory Cluster Car Flowers",
-  "desc": "A cluster of white daisies and chrysanthemums on the bonnet.",
-  "tags": "Wedding cars / Bridal cars",
-  "price": "6,500",
-  "img": "images/ml-298.jpg",
   "cat": "car"
  },
  {
@@ -2092,7 +1876,7 @@ const BOUQUETS = [
   "name": "Lily Table Flowers",
   "desc": "Fresh pink lilies arranged in clear glass vases for reception and restaurant tables.",
   "tags": "Receptions / Dinners",
-  "price": "2,000 per vase",
+  "price": "2,500 per vase",
   "img": "images/ml-108.jpg",
   "cat": "table"
  },
@@ -2119,7 +1903,7 @@ const BOUQUETS = [
   "name": "Glass Vase Centrepiece",
   "desc": "Cream alstroemeria and fresh greenery in a tall glass cylinder vase.",
   "tags": "Receptions / Gala dinners",
-  "price": "3,500 per table",
+  "price": "5,000 per table",
   "img": "images/ml-221.jpg",
   "cat": "table"
  },
@@ -2137,7 +1921,7 @@ const BOUQUETS = [
   "name": "Red Vase Centrepiece",
   "desc": "A tall red glass vase with a high arrangement of white and orange flowers.",
   "tags": "Receptions / Dinners",
-  "price": "4,000 per table",
+  "price": "5,000 per table",
   "img": "images/ml-223.jpg",
   "cat": "table"
  },
@@ -2146,17 +1930,8 @@ const BOUQUETS = [
   "name": "Blue & White Dome Centrepiece",
   "desc": "White chrysanthemums, ivory roses and blue hydrangea in a full, rounded dome.",
   "tags": "Receptions / Anniversaries",
-  "price": "4,500 per table",
+  "price": "5,000 per table",
   "img": "images/ml-224.jpg",
-  "cat": "table"
- },
- {
-  "code": "ML-225",
-  "name": "Gold Sash Table Setting",
-  "desc": "A round dinner table with ivory chair covers, gold sashes and a blue-and-white centrepiece.",
-  "tags": "Receptions / Hotel dinners",
-  "price": "On request",
-  "img": "images/ml-225.jpg",
   "cat": "table"
  },
  {
@@ -2164,7 +1939,7 @@ const BOUQUETS = [
   "name": "Head Table Garland",
   "desc": "A long garland of ivory roses, white flowers and trailing ivy along the head table.",
   "tags": "Wedding receptions / Dinners",
-  "price": "3,500 per metre",
+  "price": "On request",
   "img": "images/ml-226.jpg",
   "cat": "table"
  },
@@ -2229,7 +2004,7 @@ const BOUQUETS = [
   "tags": "Photoshoots / Engagements",
   "price": "25,000",
   "img": "images/ml-230.jpg",
-  "cat": "table"
+  "cat": "stage"
  },
  {
   "code": "ML-231",
@@ -2526,16 +2301,7 @@ const BOUQUETS = [
   "tags": "Church weddings / Ceremonies",
   "price": "On request",
   "img": "images/ml-109.jpg",
-  "cat": "arch"
- },
- {
-  "code": "ML-110",
-  "name": "Fern Garden Arch",
-  "desc": "A wild, natural arch of fresh ferns and foliage for photoshoots and ceremonies.",
-  "tags": "Photoshoots / Beach and garden weddings",
-  "price": "20,000",
-  "img": "images/ml-110.jpg",
-  "cat": "arch"
+  "cat": "stage"
  },
  {
   "code": "ML-252",

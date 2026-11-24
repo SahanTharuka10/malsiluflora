@@ -335,11 +335,45 @@ function build(list) {
   ALL = list;
   byCat = Object.fromEntries(CATS.map((c) => [c.id, ALL.filter((b) => b.cat === c.id)]));
   $$("[data-count]").forEach((el) => (el.textContent = ALL.length));
+  $$("[data-cats]").forEach((el) => (el.textContent = CATS.filter((c) => byCat[c.id]?.length).length));
+  startHeroFade();
   buildCollections();
   buildTabs();
   buildPrices();
   render();
   openLinked();
+}
+
+/* ---------- hero: arches fade through photos from the other collections ---------- */
+const HERO_SETS = [["rose", "mini", "pastel"], ["mixed", "car", "stage"], ["colour", "table", "arch"]];
+let heroStarted = false;
+function startHeroFade() {
+  if (heroStarted || reduceMotion) return;
+  const arches = [$(".hero-art .side.left"), $(".hero-art .main"), $(".hero-art .side.right")];
+  if (arches.some((a) => !a)) return;
+  heroStarted = true;
+  const pick = (id) => { const c = catOf(id); return (ALL.find((b) => b.code === c?.cover && b.cat === id) || byCat[id]?.[0])?.img; };
+  const layers = arches.map((fig, k) => {
+    const srcs = HERO_SETS[k].map(pick).filter(Boolean).concat(fig.querySelector("img").getAttribute("src"));
+    return srcs.map((src) => {
+      const img = new Image();
+      img.className = "swap"; img.alt = ""; img.decoding = "async"; img.src = src;
+      fig.appendChild(img);
+      return img;
+    });
+  });
+  const pos = [-1, -1, -1];
+  let z = 1, turn = 0;
+  const next = () => {
+    if (document.hidden) return;
+    const k = turn++ % 3, list = layers[k], prev = list[pos[k]];
+    pos[k] = (pos[k] + 1) % list.length;
+    const img = list[pos[k]];
+    img.style.zIndex = ++z;
+    img.classList.add("on");
+    if (prev) setTimeout(() => prev.classList.remove("on"), 1700);
+  };
+  setTimeout(() => { next(); setInterval(next, 2600); }, 3500);
 }
 
 // a link like ?b=ML-01 (from a WhatsApp order) opens that bouquet straight away
