@@ -149,9 +149,10 @@ section[id]{scroll-margin-top:calc(var(--nav-h) - 1px)}
 /* ---------- collections ---------- */
 .collections{padding-top:112px;padding-bottom:104px}
 .coll-wrap{position:relative}
-.coll-grid{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:12px 0 8px}
+/* all collections at once: two rows (7 + 6, second row centred) */
+.coll-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:36px 22px;padding:12px 0 8px}
 .coll-grid::-webkit-scrollbar{display:none}
-.coll{flex:0 0 calc((100% - 4*28px)/5);scroll-snap-align:start}
+.coll{flex:0 0 calc((100% - 6*22px)/7)}
 .coll-nav{position:absolute;top:38%;z-index:2;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--plum);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm);transition:opacity .25s,transform .25s var(--ease),background .25s}
 .coll-nav:hover{background:var(--plum);color:#fff;transform:scale(1.06)}
 .coll-nav[disabled]{opacity:0;pointer-events:none}
@@ -163,7 +164,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) - 1px)}
 .coll .arch-clip{display:block;overflow:hidden;border-radius:999px 999px 0 0}
 .coll:hover .arch img{transform:scale(1.06)}
 .coll:hover .arch::after{inset:-5px -5px 5px;opacity:1}
-.coll-name{margin-top:22px;min-height:2.3em;font:500 1.42rem/1.15 var(--serif);color:var(--ink);text-wrap:balance;transition:color .3s}
+.coll-name{margin-top:18px;min-height:2.3em;font:500 1.18rem/1.15 var(--serif);color:var(--ink);text-wrap:balance;transition:color .3s}
 .coll:hover .coll-name{color:var(--plum)}
 .coll-meta{margin-top:10px;display:inline-flex;align-items:center;gap:8px;font:500 .68rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
 .coll-meta .ico{width:14px;height:14px;transition:transform .3s var(--ease)}
@@ -368,9 +369,10 @@ dialog::backdrop{background:rgba(32,10,26,.62);backdrop-filter:blur(6px);-webkit
   .hero-stats li{align-items:center;padding:0 10px}
   .hero-stats li+li{padding-left:10px}
   .hero-art{max-width:640px;margin:0 auto;width:100%}
-  .coll-grid{gap:22px;margin:0 -32px;padding:12px 32px 8px;scroll-padding:0 32px}
-  .coll-nav{display:none}
-  .coll{flex:0 0 min(42%,260px);scroll-snap-align:start}
+  /* tablets and phones: the same two rows, swiped sideways */
+  .coll-grid{display:grid;grid-template-columns:repeat(7,min(30%,200px));justify-content:start;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:28px 18px;margin:0 -32px;padding:12px 32px 8px;scroll-padding:0 32px}
+  .coll-grid::-webkit-scrollbar{display:none}
+  .coll{scroll-snap-align:start}
   .tabs{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);padding-right:28px}
   .steps{grid-template-columns:1fr;max-width:620px;margin:0 auto}
   .contact-card{grid-template-columns:1fr;gap:48px;padding:48px 40px;text-align:center}
@@ -422,9 +424,8 @@ dialog::backdrop{background:rgba(32,10,26,.62);backdrop-filter:blur(6px);-webkit
   .ribbon-track span{font-size:1.15rem;padding:14px 12px;gap:24px}
   .sec-head{margin-bottom:34px}
   .collections,.prices{padding-top:80px;padding-bottom:76px}
-  .coll-grid{margin:0 -16px;padding:12px 16px 8px;gap:16px;scroll-padding:0 16px}
-  .coll{flex-basis:62%}
-  .coll-name{font-size:1.3rem;margin-top:18px}
+  .coll-grid{margin:0 -16px;padding:12px 16px 8px;gap:22px 14px;scroll-padding:0 16px;grid-template-columns:repeat(7,42%)}
+  .coll-name{font-size:1.08rem;margin-top:14px}
   .gallery{padding:80px 0 72px}
   .toolbar-in{padding-top:12px;padding-bottom:12px;gap:10px}
   .tab{padding:9px 14px;font-size:.76rem}
